@@ -1,136 +1,54 @@
+
 body{
-    background-color: #1F2E13;
-    color:#F2FA9B;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin: 0 0 0 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "main main main"
+    'main main main'
+    'footer footer footer';
+    margin: 0;
+    padding-top: 2rem;
+    background-color:#3B1C32 ;
+    color:#1A1A1D;
 }
-#home{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-img{
-    height: 380px;
-    width: 250px;
-    border:2px solid black;
-    border-radius: 500px;
-}
-#navcart{
-    height:50px;
-    width: 1348px;
-    background-color: #1F2E13;
+header{
+    grid-area:header;
     position: fixed;
-    top: 0px;
-    z-index: 1;
-}
-#navbar{
-    box-sizing: border-box;
-    width:400px;
-    font-size: x-large;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    position: relative;
-    top:10px;
-    left: 900px;
+    justify-content: space-between;
+}
+main{
+    grid-area:main;
+}
+h2{
+    justify-self: baseline;
+    font-size: xx-large;
+}
+nav{
+    width:25% ;
+    justify-self: center;
+    align-self: center;
+    display: flex; 
+    gap: 10%;
+    margin: auto;
+    font-size: x-large;
+}
+.navElement{
+    text-decoration: none;
+    color: black;
 }
 h1{
-    color:#1F2E13 ;
-    font-size: 120px;
-    margin: 0px;}
-p{
-    color: #1F2E13;
-    font-size: larger;
-    margin: 0px;
+    font-size: 10rem;
+    margin: 0;
 }
-#headercart{
-    position: absolute;
-    top: 50px;
-    height: 90vh;
-    width: 90vw;
-    border-radius: 10px 10px 10px 10px;
-    background-color: #F2FA9B;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between  ;
-    align-items: center;
+#myPic{
+    height: 45vh;
+    border-radius: 7rem;
+    filter: drop-shadow();
 }
-a{
-    text-decoration: none;
-    color: #F2FA9B;
-}
-a:hover{
-    color: chocolate;
-    opacity:0.5;
-}
-#skills{
-    position: absolute;
-    top: 800px;
-    margin-top: 60px;
-}
-#projects{
-    position: absolute;
-    top:1600px;
-}
-#contact{
-    position: absolute;
-    top:2400px;
-    height: 100vh;
-    width: 100%;
-}
-form{
-    height: 375px;
-    width: 782px;
-    position: relative;
-    left: 280px;
-    top:80px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1.5fr 1fr 1.5fr 1fr 4fr;
-    grid-template-areas:
-    'fnl lnl'
-    'fni lni'
-    'el pl'
-    'ei pi'
-    'ml .'
-    'mi mi';
-    gap:0px 10px
-    
-}
-label[for='fName']{
-    grid-area: fnl;
-    align-self: end;
-}
-label[for='lName']{
-    grid-area: lnl;
-    align-self: end;
-}
-label[for='email']{
-    grid-area: el;
-    align-self: end;
-}
-label[for='phoneNumber']{
-    grid-area: pl;
-    align-self: end;
-}
-label[for='message']{
-    grid-area: ml;
-    align-self: end;
-}
-#fName{
-    grid-area: fni;
-}
-#lName{
-    grid-area: lni;
-}
-#email{
-    grid-area: ei;
-}
-#phoneNumber{
-    grid-area: pi;
-}
-#message{
-    grid-area: mi;
-}
+/*A94A4A wine F4D793 sand
