@@ -51,8 +51,7 @@ main{
     padding-top: 2rem;
     grid-area: home;
     display: flex;
-    flex-direction: column;
-    gap: 15%;
+    justify-content: space-around;
     align-items:center;
 }
 #myPic{
@@ -60,7 +59,7 @@ main{
     filter:grayscale(1000);
 }
 #intro{
-    font-size: 1.3em
+    text-align: center;
 }
 #skills{
     padding-top: 2rem;
@@ -119,7 +118,7 @@ main{
         overflow:visible;
     }
     #intro{
-        font-size: 0.7em;
+        font-size: 0.4em;
     }
     nav{
         font-size: 1em;
