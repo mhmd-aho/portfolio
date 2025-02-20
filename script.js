@@ -1,3 +1,7 @@
-let ul = document.querySelector("ul");
-let li = document.createElement("li");
-ul.append(li);
+document.addEventListener("DOMContentLoaded", () => {
+    let paragraph = document.getElementById('intro');
+    let changeColor = () => paragraph.style.color = 'black';
+    let originalColor = () => paragraph.style.color = '';
+    paragraph.addEventListener('mouseover', changeColor);
+    paragraph.addEventListener('mouseout',originalColor);
+  });

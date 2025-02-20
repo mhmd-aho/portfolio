@@ -10,8 +10,9 @@ body{
     'footer footer footer';
     margin: 0;
     padding-top: 2rem;
-    background-color:#3B1C32 ;
-    color:#1A1A1D;
+    background-color:#E5D0AC ;
+    color:#A31D1D;
+    ;
 }
 header{
     grid-area:header;
@@ -20,35 +21,110 @@ header{
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-}
-main{
-    grid-area:main;
-}
-h2{
-    justify-self: baseline;
-    font-size: xx-large;
+    justify-content: baseline;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    z-index: 100;
 }
 nav{
-    width:25% ;
-    justify-self: center;
-    align-self: center;
+    width:30% ;
     display: flex; 
-    gap: 10%;
-    margin: auto;
-    font-size: x-large;
+    justify-content: space-between;
+    font-size: large;
 }
 .navElement{
     text-decoration: none;
-    color: black;
+    color: #A31D1D; 
+    transition: color,transform 1s;
 }
-h1{
-    font-size: 10rem;
-    margin: 0;
+main{
+    grid-area:main;
+    display: grid;
+    height: 2500px;
+    grid-template-areas:
+    'home '
+    'skills '
+    'projects';
+    grid-template-rows: 2fr 3fr 2fr;
+}
+#home{
+    padding-top: 2rem;
+    grid-area: home;
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+    align-items:center;
 }
 #myPic{
-    height: 45vh;
-    border-radius: 7rem;
-    filter: drop-shadow();
+    height: 60vh;
+    filter:grayscale(1000);
 }
-/*A94A4A wine F4D793 sand
+#intro{
+    font-size: 1.3em
+}
+#skills{
+    padding-top: 2rem;
+    grid-area: skills;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#grid-skills{
+    width: 40%;
+    height: 40%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    'html css js'
+    '. tw react'
+    '. bs next';
+    gap:15%;
+}
+#html{
+    grid-area:html;
+}
+#css{
+    grid-area:css;
+}
+#js{
+    grid-area:js;
+}
+#tw{
+    grid-area:tw;
+}
+#react{
+    grid-area:react;
+}
+#bs{
+    grid-area:bs;
+}
+#next{
+    grid-area: next;
+}
+#grid-skills img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: visible;
+}
+#projects{
+    margin-top: 2rem;
+    grid-area: projects;
+}
+@media screen and (max-width: 425px ){
+    img{
+        max-height: 30%;
+        width: auto;
+        overflow:visible;
+    }
+    #intro{
+        font-size: 0.7em;
+    }
+    nav{
+        font-size: 1em;
+        display: flex;
+        gap: 10%;
+    }
+
+}
