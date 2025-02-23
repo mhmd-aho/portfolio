@@ -1,7 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-    let paragraph = document.getElementById('intro');
-    let changeColor = () => paragraph.style.color = 'black';
-    let originalColor = () => paragraph.style.color = '';
-    paragraph.addEventListener('mouseover', changeColor);
-    paragraph.addEventListener('mouseout',originalColor);
-  });
+    let img = document.getElementById('myPic');
+    let info = document.getElementById('info');
+    img.onmouseover = () => {
+        info.style.visibility = "visible";
+        img.style.filter = 'grayscale(0)'
+    }
+    img.onmouseout = () =>{
+      info.style.visibility = "hidden"
+    }

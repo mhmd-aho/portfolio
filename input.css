@@ -1,6 +1,7 @@
 
 body{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    height: 100vh;
     display: grid;
     grid-template-areas: 
     "header header header"
@@ -9,10 +10,8 @@ body{
     'main main main'
     'footer footer footer';
     margin: 0;
-    padding-top: 2rem;
     background-color:#E5D0AC ;
     color:#A31D1D;
-    ;
 }
 header{
     grid-area:header;
@@ -25,6 +24,7 @@ header{
     padding-top: 1rem;
     padding-bottom: 1rem;
     z-index: 100;
+    backdrop-filter: blur(1rem);
 }
 nav{
     width:30% ;
@@ -51,24 +51,26 @@ main{
     padding-top: 2rem;
     grid-area: home;
     display: flex;
-    justify-content: space-around;
-    align-items:center;
+    justify-content: center;
+    align-self: center;
+    gap: 1em;
 }
 #myPic{
     height: 60vh;
     filter:grayscale(1000);
+    border-radius: 120px;
 }
-#intro{
-    text-align: center;
+#info{
+    visibility: hidden;
+}
+#role{
+    margin-top:80px;
+}
+p{
+    padding: 20px;
 }
 #skills{
-    padding-top: 2rem;
-    grid-area: skills;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#grid-skills{
+    margin: auto;
     width: 40%;
     height: 40%;
     display: grid;
@@ -76,12 +78,18 @@ main{
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
     'html css js'
-    '. tw react'
-    '. bs next';
+    'github tw react'
+    'git bs next';
     gap:15%;
 }
 #html{
     grid-area:html;
+}
+#github{
+    grid-area: github;
+}
+#git{
+    grid-area: git;
 }
 #css{
     grid-area:css;
@@ -101,7 +109,7 @@ main{
 #next{
     grid-area: next;
 }
-#grid-skills img {
+#skills img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -111,14 +119,23 @@ main{
     margin-top: 2rem;
     grid-area: projects;
 }
+@media screen and (max-width:760px) and (min-width:426px){
+    img{
+        max-height: 60%;
+        width: auto;
+        overflow: visible;
+    }
+    nav{
+        font-size: medium;
+        gap: 0.5em;
+    }
+}
+
 @media screen and (max-width: 425px ){
     img{
         max-height: 30%;
         width: auto;
         overflow:visible;
-    }
-    #intro{
-        font-size: 0.4em;
     }
     nav{
         font-size: 1em;
