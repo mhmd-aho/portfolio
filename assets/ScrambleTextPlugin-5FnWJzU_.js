@@ -1,4 +1,4 @@
-import{r as x,g as CD}from"./index-Cn2Izgij.js";/*!
+import{r as x,g as CD}from"./index-Dm24ujD0.js";/*!
  * @gsap/react 2.1.2
  * https://gsap.com
  *
