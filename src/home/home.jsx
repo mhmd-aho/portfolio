@@ -2,11 +2,17 @@ import homeBG from '/src/home/img/homeBG.png';
 import eyeSide from '/src/home/img/eyeSide.png';
 import rightSide from '/src/home/img/rightSide.png'
 import { useGSAP } from '@gsap/react';
-import { useRef } from 'react';
+import { useRef,useEffect } from 'react';
 import gsap from 'gsap';
 import SplitText from 'gsap/SplitText';
 import ScrambleTextPlugin from "gsap/ScrambleTextPlugin";
 function Home(){
+    useEffect(() => {
+        [homeBG, eyeSide, rightSide].forEach((src) => {
+            const img = new Image();
+            img.src = src;
+        });
+}, []);
     gsap.registerPlugin(ScrambleTextPlugin);
     const home = useRef()
     useGSAP(()=>{

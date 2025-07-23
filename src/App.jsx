@@ -6,16 +6,16 @@ const AboutMe = lazy(() => import('./about/aboutMe'));
 const ShowCase = lazy(() => import('./showcase/showCase'));
 function App() {
   return (
-  <div className="overflow-hidden "> 
-    <Header />
-    <main className="pt-12">
-      <Suspense fallback={<Loading />}>
-          <Home />
-          <AboutMe />
-          <ShowCase />
-      </Suspense>
-    </main>
-  </div>
+  <Suspense fallback={<Loading />}>
+    <div className="overflow-hidden "> 
+      <Header />
+      <main className="pt-12">
+        <Home />
+        <AboutMe />
+        <ShowCase />
+      </main>
+    </div>
+  </Suspense>
   )
 }
 

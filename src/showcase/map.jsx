@@ -9,6 +9,12 @@ import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import gsap from 'gsap';
 export default function Map() {
+        useEffect(() => {
+            [project1, project2,project3,project4, project5,project6].forEach((src) => {
+                const img = new Image();
+                img.src = src;
+            });
+    }, []);
     const divs= useRef([])
     const [hoverIndex,setHoverIndex] = useState(null);
     const [isMobile, setIsMobile] = useState(false); 
