@@ -1,7 +1,7 @@
-import Header from "./header";
-import Home from "./home/home";
-import AboutMe from "./about/aboutMe";
-import ShowCase from "./showcase/showCase";
+import { Suspense, lazy } from 'react';
+const Home = lazy(() => import('./home/home'));
+const AboutMe = lazy(() => import('./about/aboutMe'));
+const ShowCase = lazy(() => import('./showcase/showCase'));
 function App() {
   return (
     <div className="overflow-hidden "> 
