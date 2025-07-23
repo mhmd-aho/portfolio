@@ -1,0 +1,14 @@
+@font-face {
+    font-family: rosnoc;
+    src: url('../src/fonts/Necosmic-PersonalUse.otf');
+}
+@font-face {
+    font-family: nunito-regular;
+    src: url('../src/fonts/HumanSans-Regular.otf');
+}
+@import "tailwindcss";
+
+@theme{
+    --font-rosnoc: rosnoc;
+    --font-nunito: nunito-regular;
+}
