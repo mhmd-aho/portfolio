@@ -21,7 +21,6 @@ export default function Contacts() {
             {popup && (
                 <div  className="list absolute w-full shadow-lg flex flex-col text-amber-400">
                     <a href="https://www.linkedin.com/in/mhmd-abou-hamoud" className="hover:text-amber-50 hover:tracking-widest duration-300">LINKEDIN</a>
-                    <a href="/path-to-your-resume.pdf" className="hover:text-amber-50 hover:tracking-widest duration-300">RESUME</a>
                     <a href="https://github.com/mhmd-aho" className="hover:text-amber-50 hover:tracking-widest duration-300">GITHUB</a>
                     <a href="tel:+96171547591"  className="hover:text-amber-50 hover:tracking-widest duration-300">PHONE</a>
                     <a href="mailto:mhmdabouhamoud@gmail.com"  className="hover:text-amber-50 hover:tracking-widest duration-300">EMAIL</a>
