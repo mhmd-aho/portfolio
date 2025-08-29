@@ -4,6 +4,8 @@ import project3 from '/src/showcase/img/randomMovie.png';
 import project4 from '/src/showcase/img/taskManager.png';
 import project5 from '/src/showcase/img/healthDashboard.png';
 import project6 from '/src/showcase/img/walletTrack.png';
+import project7 from '/src/showcase/img/ticketGenerator.png';
+import project8 from '/src/showcase/img/eCommerce.png';
 import { useEffect, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
@@ -80,6 +82,18 @@ const projects = [
             des: 'Html5 || TailwindCss || React.js',
             link:'https://mhmd-aho.github.io/wallet-track/'
         },
+        {
+            name:'Ticker generator (frontend mentor project)',
+            src: project7,
+            des: 'Html5 || TailwindCss || React.js',
+            link:'https://mhmd-aho.github.io/ticker-generator/',
+        },
+        {
+            name:'e-commerce (frontend mentor project)',
+            src: project8,
+            des: 'Html5 || TailwindCss || React.js',
+            link:'https://mhmd-aho.github.io/e-commerce/',
+        }
     ];
     return (
         <>

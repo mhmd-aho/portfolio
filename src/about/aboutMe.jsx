@@ -58,7 +58,7 @@ function AboutMe(){
     }})
     },{scope:about})
     return(
-        <section ref={about} id="aboutMe" className="scroll-mt-12 h-[650px] bg-black flex flex-col sm:flex-row  justify-center items-center gap-2 sm:gap-40">
+        <section ref={about} id="aboutMe" className="scroll-mt-12 h-screen bg-black flex flex-col sm:flex-row  justify-center items-center gap-2 sm:gap-40">
         <div className="sm:w-1/2 w-3/4 h-[70%] flex flex-col items-center justify-around ">
                 <h2 className="title m-0 text-amber-400 lg:text-6xl sm:text-3xl text-xl font-rosnoc tracking-wider">ABOUT ME</h2>
                 <p className="para font-nunito lg:text-xl w-full text-amber-50 text-center">I'm Mohamed, a self-taught developer based in Saida, Lebanon.I'm currently studying the Full-Stack Engineer path at Codecademy.I'm open to freelance opportunities and new projects.</p>

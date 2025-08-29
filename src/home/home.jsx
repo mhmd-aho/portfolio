@@ -34,11 +34,11 @@ function Home(){
         })
     },{scope:home})
     return(
-        <section ref={home} id='home' style={{backgroundImage:`url(${homeBG})`}} className='sm:p-4 scroll-m-12 scrollbar-hide overflow-hidden h-[680px] grid grid-cols-4 grid-rows-6 sm:gap-x-4 bg-center bg-cover'>
+        <section ref={home} id='home' style={{backgroundImage:`url(${homeBG})`}} className='sm:p-4 scroll-m-12 scrollbar-hide overflow-hidden h-screen grid grid-cols-4 grid-rows-6 sm:gap-x-4 bg-center bg-cover'>
             <div className='eye col-start-1 row-start-2 bg-cover invisible lg:visible'   style={{backgroundImage:`url(${eyeSide})`}} />
             <div className='right col-start-4 row-start-5 bg-cover invisible lg:visible'   style={{backgroundImage:`url(${rightSide})`}} />
-            <h1 className="leftWord col-span-2  row-start-3 h-3/5 sm:h-full bg-black pt-4 sm:pt-8 xl:pt-4 font-rosnoc text-amber-50 text-xl sm:text-4xl lg:text-5xl xl:text-7xl tracking-widest text-end sm:text-center overflow-hidden" >FRONT-END</h1>
-            <h1 className="rightWord col-start-3 col-end-5 row-start-3 h-3/5 sm:h-full sm:row-start-4 bg-black pt-8 xl:pt-4 font-rosnoc text-amber-50 text-xl sm:text-4xl lg:text-5xl xl:text-7xl tracking-widest text-start sm:text-center overflow-hidden" >DEVELOPER</h1>
+            <h1 className="leftWord col-span-2  row-start-3 h-3/5 sm:h-full bg-black pt-4 sm:pt-8 xl:pt-6 font-rosnoc text-amber-50 text-xl sm:text-4xl lg:text-5xl xl:text-7xl tracking-widest text-end sm:text-center overflow-hidden" >FRONT-END</h1>
+            <h1 className="rightWord col-start-3 col-end-5 row-start-3 h-3/5 sm:h-full sm:row-start-4 bg-black pt-8 xl:pt-6 font-rosnoc text-amber-50 text-xl sm:text-4xl lg:text-5xl xl:text-7xl tracking-widest text-start sm:text-center overflow-hidden" >DEVELOPER</h1>
         </section>
     )
 }
