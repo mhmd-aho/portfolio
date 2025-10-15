@@ -12,9 +12,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.4",
-    "gsap": "^3.13.0",
+    "ldrs": "^1.1.7",
+    "motion": "^12.23.22",
     "pixi.js": "^8.9.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+::-webkit-scrollbar {
+  display: none;
+}
+html, body {
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+.draggable{
+   user-select: none;
+  -webkit-user-drag: none;
+}
+@theme{
+  --color-black:#1A1D1B;
+  --color-primary:#EAD653;
+}

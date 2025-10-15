@@ -1,21 +1,26 @@
-import { Suspense, lazy } from 'react';
-import Header from './header';
-import Loading from './loading';
-const Home = lazy(() => import('./home/home'));
-const AboutMe = lazy(() => import('./about/aboutMe'));
-const ShowCase = lazy(() => import('./showcase/showCase'));
+import { useState } from 'react';
+import Login from '/src/login.jsx';
+import Home from './home';
+import ShutDown from './shutdown';
 function App() {
-  return (
-  <Suspense fallback={<Loading />}>
-    <div className="overflow-hidden "> 
-      <Header />
-      <main className="pt-12">
-        <Home />
-        <AboutMe />
-        <ShowCase />
-      </main>
-    </div>
-  </Suspense>
+  const [logedIn,setLogedIn] = useState(true);
+  const [powerOff,setPowerOff] = useState(false);
+  const handleShutDown = ()=>{
+    setPowerOff(true);
+    setTimeout(() => {
+      document.body.innerHTML = ''
+    }, 3000);
+  }
+    return (
+      (
+        powerOff?
+        <ShutDown/>
+        :
+        logedIn?
+        <Home setPowerOff={setPowerOff} handleShutDown={handleShutDown}/>
+        :
+        <Login setLogedIn={setLogedIn} handleShutDown={handleShutDown}/>
+      )
   )
 }
 
