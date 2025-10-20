@@ -26,6 +26,10 @@ import project6 from '/src/assets/img/walletTrack.png';
 import project7 from '/src/assets/img/ticketGenerator.png';
 import project8 from '/src/assets/img/eCommerce.png';
 import whatsapp from '/src/assets/img/whatsapp.png';
+import settingIcon from '/src/assets/img/72008_settings_icon.png';
+import adanHand from '/src/assets/img/adamHand.jpg';
+import dot from '/src/assets/img/dot.png';
+import homeScreen from '/src/assets/img/home-screen.jpg'
 const appList = [
         {
             name:'Trash',
@@ -55,7 +59,8 @@ const appList = [
             name:'Github',
             icon: github,
             place:'desktop',
-            link:'https://github.com/mhmd-aho'
+            link:'https://github.com/mhmd-aho',
+            contact: true
         },
         {
             name:'Chrome',
@@ -81,7 +86,8 @@ const appList = [
             icon: linkedin,
             place:'recommed',
             des:'Recently added',
-            link:'www.linkedin.com/in/mhmd-abou-hamoud'
+            link:'www.linkedin.com/in/mhmd-abou-hamoud',
+            contact: true
         }, 
         {
             name:'Youtube',
@@ -99,12 +105,14 @@ const appList = [
         {
             name:'Instagram',
             icon: insta,
-            link:'https://www.instagram.com/m_abouhamoud/'
+            link:'https://www.instagram.com/m_abouhamoud/',
+            contact: true
         },
         {
             name:'whatsApp',
             icon:whatsapp ,
-            link:'https://wa.me/+96171547591'
+            link:'https://wa.me/+96171547591',
+            contact: true
         },
         {
             name:'Vs code',
@@ -134,6 +142,7 @@ const appList = [
     const desktopApp = appList.filter(app=> app.place === 'desktop' || app.place === 'both');
     const taskBarApp = appList.filter(app=> app.place === 'both');
     const recommedApp = appList.filter(app=> app.place === 'recommed');
+    const contactApp = appList.filter(app=>app.contact);
         const projects = [
         {
             name: "RANDOM MESSAGE",
@@ -200,5 +209,25 @@ const appList = [
             des:'A product page simulation for an e-commerce site. It allows users to browse items, adjust quantities, and add products to a cart, providing a realistic shopping experience.'
         }
     ];
-    export {appList,desktopApp,taskBarApp,recommedApp};
-    export {projects};
+    const imageArray = [
+        {
+            src:settingIcon,
+            name:'Settings icon',
+        },{
+            src:adanHand,
+            name:'Adam hand',
+        },{
+            src: dot,
+            name:'Dot',
+        },{
+            src:project8,
+            name:'E-commerce'
+        },{
+            src:project5,
+            name:'health Dashboard',
+        },{
+            src: homeScreen,
+            name:'Home screen',
+        },
+    ]
+    export {appList,desktopApp,taskBarApp,recommedApp,contactApp,projects,imageArray};

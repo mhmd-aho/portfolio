@@ -1,8 +1,9 @@
-import { motion } from "motion/react";
-import adamHand from '/src/assets/img/adamHand.jpg';
+import { useState} from "react";
+import { motion} from "motion/react";
 import figma from '/src/assets/img/icons8-figma-50.png';
 import vsCode from '/src/assets/img/icons8-vs-code-50.png';
 import github from '/src/assets/img/icons8-github-50.png';
+import {contactApp} from '/src/data.js';
 import git from '/src/assets/img/icons8-git-48.png';
 import html from '/src/assets/img/icons8-html5-48.png';
 import css from '/src/assets/img/icons8-css-48.png';
@@ -10,6 +11,9 @@ import javascript from '/src/assets/img/icons8-javascript-48.png';
 import tailwind from '/src/assets/img/icons8-tailwind-css-48.png';
 import bootstrap from '/src/assets/img/icons8-bootstrap-48.png';
 import reactP from '/src/assets/img/icons8-react-48.png';
+import star from '/src/assets/img/asterisk-svgrepo-com.svg';
+import Cursor from "/src/cursor";
+import noise from '/src/assets/img/noise.png';
 const buttonVariants = {
   invisible: { scale: 0 },
   visible: { scale: 1, transition: { duration: 0.3 } },
@@ -22,6 +26,7 @@ const buttonVariants = {
   tap: { scale: 0.9, transition: { duration: 0.1 } },
 };
 function AboutMe() {
+  const [hover,setHover] = useState(false);
     const tools =[
         {
             name:'Figma',
@@ -84,29 +89,47 @@ function AboutMe() {
     </svg>)}
     ]
   return (
-    <section className="flex flex-col items-center w-full bg-black text-white px-10 md:px-28 lg:px-52">
-      <div className="min-h-screen flex flex-col justify-center items-center text-center space-y-3">
-        <p className="text-5xl md:text-7xl text-white/90">Hey, I'm</p>
-        <h1 className="text-6xl md:text-8xl font-bold text-primary">MOHAMAD</h1>
+    <section style={{backgroundImage:`url(${noise})`}}  className="flex flex-col items-center w-full bg-black text-white px-20 font-normal cursor-[url(/src/assets/img/dot.png),_pointer]">
+      <Cursor hover={hover} />
+      <div className="h-[744px] w-full flex justify-between items-center py-20 bg-cover bg-center">
+        <div className="w-1/3 h-1/2 flex flex-col gap-5 self-start">
+          <h1 className="text-7xl flex flex-col w-full font-semibold">
+            <span onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="self-start text-primary">FRONTEND</span>
+            <span onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="self-end">DEVELOPER</span>
+          </h1>
+          <p onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="text-lg text-start text-white/50 ">Hi, I’m Mohamad — a junior front-end developer passionate about crafting modern, responsive, and user-friendly web experiences.</p>
+        </div>
+        <div className="w-1/3 flex flex-col items-baseline gap-2 self-end text-lg text-white/50">
+            <p className="text-primary" onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} >&lt;ul&gt;</p>
+            <div>
+              <p onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="pl-10">&lt;li&gt;Based in Saida, Lebanon&lt;/li&gt;</p>
+              <p onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="pl-10">&lt;li&gt;Born in 11 September 2003&lt;/li&gt;</p>
+            </div>
+            <p className="text-primary" onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)}>&lt;/ul&gt;</p>
+        </div>
       </div>
-      <div className="min-h-screen w-full flex flex-col justify-center items-center text-center md:text-left space-y-8 max-w-4xl">
-        <p className="text-xl md:text-2xl leading-relaxed text-gray-200">
-          I’m a self-taught front-end web developer from Lebanon, dedicated to turning ideas into creative and impactful digital experiences. 
-          I specialize in building seamless, responsive, and intuitive user interfaces using modern technologies like React and Tailwind CSS.
-        </p>
-        <p className="text-xl md:text-2xl leading-relaxed text-gray-200">
-          My approach centers on creating scalable, high-performing solutions that align with both user needs and business goals. 
-          By emphasizing performance, accessibility, and thoughtful design, I aim to craft experiences that are not only visually engaging but also deliver meaningful results.
+      <div className="h-[744px] w-full flex flex-col  gap-20">
+        <div className=" w-full h-10 flex justify-baseline items-center gap-2 border-b border-white/50 ">
+          <img src={star} className="h-6 opacity-50 animate-spin"/>
+          <h2 className="text-lg text-white/50 ">About me</h2>
+        </div>
+        <p onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="text-2xl w-3/4 leading-relaxed flex flex-col gap-5 text-gray-200">
+          <span>I’m a self-taught front-end web developer, dedicated to turning ideas into creative and impactful digital experiences.</span>
+          <span>I specialize in building seamless, responsive, and intuitive user interfaces using modern technologies like React and Tailwind CSS.</span>
+          <span>By prioritizing performance, accessibility, and thoughtful design, I strive to craft web experiences that are not only visually engaging but also deliver meaningful results.</span>
         </p>
       </div>
-      <div className="min-h-screen w-full flex flex-col justify-center items-start space-y-12">
-        <h2 className="text-4xl font-semibold text-primary">Tech Stack</h2>
-        <div className="space-y-10">
-        <div>
-            <h3 className="text-2xl font-medium mb-6">Front-end</h3>
-            <div className="flex flex-wrap gap-8">
+      <div className="h-[744px] w-full flex flex-col  gap-20">
+        <div className=" w-full h-10 flex justify-baseline items-center gap-2 border-b border-white/50 ">
+          <img src={star} className="h-6 opacity-50 animate-spin"/>
+          <h2 className="text-lg text-white/50 ">My stack</h2>
+        </div>
+        <div className="flex flex-col gap-16">
+        <div className="flex  justify-between">
+            <h3 onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="text-6xl text-primary font-semibold h-fit">Front-end</h3>
+            <div className="w-1/2 flex flex-wrap gap-8">
             {frontEnd.map((tech) => (
-                <div key={tech.name} className="flex items-center gap-3 w-40">
+                <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} key={tech.name} className="flex items-center gap-3 w-40">
                 {tech.svg ? (
                     <>
                     <div
@@ -118,7 +141,7 @@ function AboutMe() {
                     >
                         {tech.svg}
                     </div>
-                    <p className="text-lg">{tech.name}</p>
+                    <p className="text-lg text-white/50">{tech.name}</p>
                     </>
                 ) : (
                     <>
@@ -129,18 +152,18 @@ function AboutMe() {
                         className="h-full w-full object-contain"
                         />
                     </div>
-                    <p className="text-lg">{tech.name}</p>
+                    <p className="text-lg text-white/50">{tech.name}</p>
                     </>
                 )}
                 </div>
             ))}
             </div>
         </div>
-        <div>
-            <h3 className="text-2xl font-medium mb-6">Tools</h3>
-            <div className="flex flex-wrap gap-8">
+        <div className="flex  justify-between">
+            <h3 onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="text-6xl text-primary font-semibold h-fit">Tools</h3>
+            <div className="w-1/2 flex flex-wrap gap-8">
             {tools.map((tool) => (
-                <div key={tool.name} className="flex items-center gap-3 w-40">
+                <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} key={tool.name} className="flex items-center gap-3 w-40">
                 <div className="h-12 w-12 flex justify-center items-center">
                     <img
                     src={tool.src}
@@ -148,49 +171,57 @@ function AboutMe() {
                     className="h-full w-full object-contain"
                     />
                 </div>
-                <p className="text-lg">{tool.name}</p>
+                <p className="text-lg text-white/50">{tool.name}</p>
                 </div>
             ))}
             </div>
         </div>
         </div>
       </div>
-      <div className="min-h-screen w-full flex flex-col justify-center items-center text-center space-y-8">
-        <h2 className="text-4xl font-semibold">Let’s Build Something Great Together</h2>
-        <p className="text-lg text-gray-300 max-w-xl">
+      <div className="h-96 w-full flex flex-col justify-center items-center text-center gap-8">
+        <h2 onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="text-4xl font-semibold">Let’s Build Something Great Together</h2>
+        <p onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="text-lg text-white/50 w-xl">
           I’m always open to discussing new projects, creative ideas, or opportunities to bring your vision to life.
         </p>
 
         <div className="flex justify-center items-center gap-6">
-            <div className="h-12 w-12 p-2 bg-primary/10 hover:bg-primary duration-300 rounded-full flex justify-center items-center">
-              <img src={github} alt="icon" className="h-8 w-8" />
-            </div>
+          {
+            contactApp.map((app,index)=>(
+              <a onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} key={index} href={app.link} className="h-12 w-12 p-2 bg-primary/10 hover:bg-primary duration-300 rounded-full flex justify-center items-center">
+                <img src={app.icon} alt="icon" className="h-8 w-8" />
+              </a>
+            ))
+          }
         </div>
-
         <motion.div className="flex gap-5 justify-center pt-4">
           <motion.a
+            onMouseEnter={()=>setHover(true)} 
+            onMouseLeave={()=>setHover(false)}
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
             animate="visible"
             initial="invisible"
             className="border border-primary px-4 py-2 text-white rounded-lg"
+            href=""
           >
-            Repository
+            Hire me
           </motion.a>
           <motion.a
+            onMouseEnter={()=>setHover(true)} 
+            onMouseLeave={()=>setHover(false)}
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
             animate="visible"
             initial="invisible"
             className="border border-primary px-4 py-2 text-white rounded-lg"
+            href="mailto:mhmdabouhamoud@gmail.com"
           >
-            Live Demo
+            Email me
           </motion.a>
         </motion.div>
       </div>
-
     </section>
   );
 }

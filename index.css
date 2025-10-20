@@ -1,4 +1,13 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'normal';
+  src: url('/src/assets/font/SourceCodePro-VariableFont_wght.ttf');
+}
+@theme {
+  --font-normal:'normal';
+  --color-black:#1A1D1B;
+  --color-primary:#EAD653;
+}
 
 ::-webkit-scrollbar {
   display: none;
@@ -11,8 +20,4 @@ html, body {
 .draggable{
    user-select: none;
   -webkit-user-drag: none;
-}
-@theme{
-  --color-black:#1A1D1B;
-  --color-primary:#EAD653;
 }

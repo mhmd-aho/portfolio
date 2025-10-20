@@ -1,11 +1,10 @@
 import {  useState } from 'react';
 import { motion,useDragControls } from "motion/react";
-import maxWindow from '/src/assets/img/window-maximize-svgrepo-com.svg';
-import minWindow from '/src/assets/img/window-minimize-svgrepo-com.svg';
 import exit from '/src/assets/img/icons8-exit-32.png';
 import AboutMe from '/src/aboutMe';
 import Projects from '/src/porject';
 import Explorer from '/src/explorer';
+import Minimize from '/src/minimzeicon';
 
 export default function AppWindow({ app, container, handleCloseApp,setShowModal }) {
 
@@ -60,11 +59,11 @@ export default function AppWindow({ app, container, handleCloseApp,setShowModal 
             dragElastic={1}
             animate={{x:position.x, y:position.y,transition:{type:"tween",duration:0.2}}}
         >
-            <div onPointerDown={handleDrag} className='bg-black/40 backdrop-blur-2xl h-8 flex justify-between items-center'>
+            <div onPointerDown={handleDrag} className='bg-black h-8 flex justify-between items-center'>
                 <img src={app.icon} alt='app icon' className='h-full p-1'/>
                 <div className='h-full flex'>
-                    <img onClick={handleWindow} src={size === 'w-4/6 h-4/6'? maxWindow : minWindow} alt="maximize window icon" className='h-full p-2 cursor-default hover:backdrop-blur-2xl hover:bg-white/20' />
-                    <img onClick={()=>handleCloseApp(app.name)} src={exit} alt="exit icon" className='h-full p-1.5 hover:backdrop-blur-2xl hover:bg-red-400 cursor-default' />
+                    <Minimize size={size} handleWindow={handleWindow}/>
+                    <img onClick={()=>handleCloseApp(app.name)} src={exit} alt="exit icon" className='h-full p-1  hover:bg-red-400 cursor-default' />
                 </div>
             </div>
             <div className='flex-1 w-full overflow-auto'>
