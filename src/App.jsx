@@ -5,7 +5,7 @@ import ShutDown from '/src/shutdown';
 import { TailChase } from 'ldrs/react';
 import 'ldrs/react/TailChase.css';
 function App() {
-  const [logedIn,setLogedIn] = useState(true);
+  const [logedIn,setLogedIn] = useState(false);
   const [powerOff,setPowerOff] = useState(false);
   const [isMobile,setIsMobile] = useState(false);
   useEffect(()=>{
@@ -40,12 +40,12 @@ function App() {
                     logedIn?
                     <Home setPowerOff={setPowerOff} handleShutDown={handleShutDown}/>
                     :
-                    <suspense fallback={
+                    <Suspense fallback={
                       <div className='w-screen h-screen flex justify-center items-center bg-black text-white'>
                         <TailChase size="60" speed="1.75" color="white" />
                       </div>} >
                     <Login setLogedIn={setLogedIn} handleShutDown={handleShutDown}/>
-                    </suspense>)
+                    </Suspense>)
     );
 }
 
