@@ -17,11 +17,11 @@ const buttonVariants = {
         transition: { duration: 0.3 } },
     tap: { scale: 0.9, transition: { duration: 0.1 } }
 };
-export default function Projects(){
+export default function Projects({size}){
     const [isHovered, setIsHovered] = useState(false);
     const [hover,setHover] =useState(false)
     return(
-        <section style={{backgroundImage:`url(${noise})`}}  className="w-full h-fit bg-black flex flex-col justify-start items-center gap-52 p-20  cursor-[url(/src/assets/img/dot.png),_pointer]">
+        <section style={{backgroundImage:`url(${noise})`}}  className="w-full h-fit pb-12  bg-black flex flex-col justify-start items-center gap-52 p-20  cursor-[url(/src/assets/img/dot.png),_pointer]">
                 {
                     projects.map((project , index)=>{
                         return(
@@ -55,7 +55,7 @@ export default function Projects(){
                                 
                             })
                         }
-                        <Cursor hover={hover}/>
+                        {size === 'w-screen h-screen' &&  <Cursor hover={hover}/>}
         </section>
     )
 }

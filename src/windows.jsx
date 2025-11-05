@@ -1,30 +1,28 @@
 import user from '/src/assets/img/usericon.webp';
 import power from '/src/assets/img/icons8-power-button-50.png';
 import { motion,AnimatePresence } from "motion/react";
+import arrow from '/src/assets/img/icons8-arrow-30-1.png'
 const variant = {
         hidden:{
             y:'100%',
-            transition:{type:'tween',duration:0.4,ease:'easeOut'}
+            transition:{type:'tween',duration:0.2,ease:'easeOut'}
         },
         visible:{
             y:0,
-            transition:{type:'tween',duration:0.4,ease:'easeOut'}
+            transition:{type:'tween',duration:0.2,ease:'easeOut'}
         }
 }
-export default function Windows(props){
-    const appList = props.appList;
-    const recommedApp = props.recommedApp;
-    const handleOpenApp = props.handleOpenApp;
+export default function Windows({windowsOpen,appList,recommedApp,handleOpenApp,handleShutDown}){
     return(
             <AnimatePresence>
                 {
-                    props.windowsOpen &&
-                    <div className='h-[650px] w-2xl overflow-y-hidden absolute bottom-15 left-96 z-20'>
-                        <motion.div variants={variant}  initial='hidden' animate='visible' exit='hidden' className='w-full h-full flex flex-col rounded-lg  overflow-hidden text-white'>
+                    windowsOpen &&
+                    <div className='h-[650px] w-2xl overflow-y-hidden absolute bottom-15 left-96 z-50'>
+                        <motion.div variants={variant}  initial='hidden' animate='visible' exit='hidden' className='w-full h-full flex flex-col rounded-lg  overflow-hidden text-white border border-white/20 shadow-lg shadow-black/30'>
                           <div className='flex-1 w-full backdrop-blur-3xl bg-black/70 p-8'>
                           <div className='w-full flex justify-between items-center px-8'>
                             <p>Pinned</p>
-                            <button className='bg-white/10 backdrop-blur-2xl px-3 py-1 rounded'>All apps</button>
+                            <button className='bg-white/10 backdrop-blur-2xl px-3 py-1 rounded flex justify-between items-center'><p>All apps</p><img className='h-6 w-5 pt-1'  src={arrow} alt="arrow icon" /></button>
                           </div>
                           <div className='flex justify-center items-center gap-4 flex-wrap '>
                             {
@@ -40,7 +38,7 @@ export default function Windows(props){
                           <div>
                             <div className='flex justify-between items-center px-8'>
                                 <p>Recommended</p>
-                                <button className='bg-white/10 backdrop-blur-2xl px-3 py-1 rounded'>More</button>
+                                <button className='bg-white/10 backdrop-blur-2xl px-3 py-1 rounded flex justify-between items-center'><p>More</p><img className='h-6 w-5 pt-1'  src={arrow} alt="arrow icon" /></button>
                             </div>
                             <div className='flex justify-baseline items-center flex-wrap w-full px-3'>
                                     {
@@ -64,7 +62,7 @@ export default function Windows(props){
                             </div>
                             <p className='text-sm'>Mohamad PC   </p>
                         </div>
-                        <img onClick={props.handleShutDown} src={power} className='w-7 h-7' alt="power icon" />
+                        <img onClick={handleShutDown} src={power} className='w-7 h-7' alt="power icon" />
                         </div>
                         </motion.div>
                     </div>

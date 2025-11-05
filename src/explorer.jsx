@@ -4,20 +4,23 @@ import documentsFolder from '/src/assets/img/icons8-documents-folder-48.png';
 import downloadsFolder from '/src/assets/img/icons8-downloads-folder-48.png';
 import picturesFolder from '/src/assets/img/icons8-pictures-folder-48.png';
 import Pictures from '/src/imgFolder';
+import DesktopFolder from '/src/desktopFolder';
+import arrow from '/src/assets/img/icons8-arrow-30.png';
 export default function Explorer(){
     const [folder,setFolder] = useState(null);
     return(
-        <section  className="w-full h-fit bg-neutral-900 text-white p-4">
-            <div className='flex justify-baseline items-baseline'>
-                <button onClick={()=>setFolder(null)}>back</button>
+        <section  className="w-full h-full flex-col bg-neutral-900 text-white">
+            <div className='flex justify-baseline items-baseline gap-1 px-4'>
+                <button onClick={()=>setFolder(null)}><img className={`w-4  ${folder?'opacity-100':'opacity-50'} rotate-180`} src={arrow}/></button>
+                <button> <img className='w-4 opacity-50' src={arrow}/></button>
             </div>
             {folder === 'imageArray' && <Pictures/>}
-            {folder === 'desktopApp' && <desktopFolder/>}
+            {(folder === 'desktopApp' || folder === 'downloadApp' || folder === 'documents' ) && <DesktopFolder folder={folder}/>}
             {
                 folder === null &&
                 <>
-                    <div className="h-96 flex flex-col justify-baseline items-baseline gap-4">
-                    <h2 className="text-2xl font-bold">Quick access</h2>
+                    <div className="h-3/4 flex flex-col justify-baseline items-baseline gap-4">
+                    <h2 className="text-2xl font-bold pl-4">Quick access</h2>
                     <div className="w-3/4 self-center flex-1 flex justify-between items-baseline flex-wrap px-10">
                         <button onClick={()=>setFolder('desktopApp')} className="flex justify-center items-center gap-2 w-80 h-20 rounded-lg hover:bg-neutral-700">
                             <img src={desktopFolder} className=" w-12 h-12"/>
@@ -33,14 +36,14 @@ export default function Explorer(){
                                 <p className="text-gray-400 text-sm">Stored locally</p>
                             </div>
                         </button>
-                        <button className="flex justify-center items-center gap-2 w-80 h-20 rounded-lg hover:bg-neutral-700">
+                        <button onClick={()=>setFolder('documents')} className="flex justify-center items-center gap-2 w-80 h-20 rounded-lg hover:bg-neutral-700">
                             <img src={documentsFolder} className="w-12 h-12"/>
                             <div className='text-start'>
                                 <p className="text-sm">Documents</p> 
                                 <p className="text-gray-400 text-sm">Stored locally</p>
                             </div>
                         </button>
-                        <button className="flex justify-center items-center gap-2 w-80 h-20 rounded-lg hover:bg-neutral-700">
+                        <button onClick={()=>setFolder('downloadApp')} className="flex justify-center items-center gap-2 w-80 h-20 rounded-lg hover:bg-neutral-700">
                             <img src={downloadsFolder} className=" w-12 h-12"/>
                             <div className='text-start'>
                                 <p className="text-sm">Downloads</p> 
@@ -49,62 +52,15 @@ export default function Explorer(){
                         </button>
                     </div>
                 </div>
-                <div className="flex flex-col justify-baseline items-baseline gap-4">
-                    <h2 className="text-2xl font-bold">Recent</h2>
+                <div className="h-1/4 flex flex-col justify-baseline items-baseline gap-4 bg-neutral-900">
+                    <h2 className="text-2xl font-bold pl-4">Recent</h2>
                     <div className="w-full flex flex-col gap-3 px-10">
                         <div className="w-full flex justify-between items-baseline">
                             <p className="w-20">name</p>
                             <p className="w-30 text-center">Data accessed</p>
                             <p>File location</p>
                         </div>
-                        <div className="w-full flex justify-between items-baseline">
-                            <div className="flex justify-baseline items-center gap-2">
-                            <div className="h-8 w-8 bg-amber-50"/>  
-                            <p>name</p>
-                            </div>
-                            <p className="w-30 text-center">11/8/2025</p>
-                            <p className="w-20 text-center">/src/img</p>
-                        </div>
-                        <div className="w-full flex justify-between items-baseline">
-                            <div className="flex justify-baseline items-center gap-2">
-                            <div className="h-8 w-8 bg-amber-50"/>  
-                            <p>name</p>
-                            </div>
-                            <p className="w-30 text-center">11/8/2025</p>
-                            <p className="w-20 text-center">/src/img</p>
-                        </div>
-                        <div className="w-full flex justify-between items-baseline">
-                            <div className="flex justify-baseline items-center gap-2">
-                            <div className="h-8 w-8 bg-amber-50"/>  
-                            <p>name</p>
-                            </div>
-                            <p className="w-30 text-center">11/8/2025</p>
-                            <p className="w-20 text-center">/src/img</p>
-                        </div>
-                        <div className="w-full flex justify-between items-baseline">
-                            <div className="flex justify-baseline items-center gap-2">
-                            <div className="h-8 w-8 bg-amber-50"/>  
-                            <p>name</p>
-                            </div>
-                            <p className="w-30 text-center">11/8/2025</p>
-                            <p className="w-20 text-center">/src/img</p>
-                        </div>
-                        <div className="w-full flex justify-between items-baseline">
-                            <div className="flex justify-baseline items-center gap-2">
-                            <div className="h-8 w-8 bg-amber-50"/>  
-                            <p>name</p>
-                            </div>
-                            <p className="w-30 text-center">11/8/2025</p>
-                            <p className="w-20 text-center">/src/img</p>
-                        </div>
-                        <div className="w-full flex justify-between items-baseline">
-                            <div className="flex justify-baseline items-center gap-2">
-                            <div className="h-8 w-8 bg-amber-50"/>  
-                            <p>name</p>
-                            </div>
-                            <p className="w-30 text-center">11/8/2025</p>
-                            <p className="w-20 text-center">/src/img</p>
-                        </div>
+                        <p className='text-white/50 self-center'>this folder is empty</p>
                     </div>
                 </div>
                 </>

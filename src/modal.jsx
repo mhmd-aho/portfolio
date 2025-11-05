@@ -1,4 +1,4 @@
-import { AnimatePresence,motion, scale } from "motion/react";
+import { AnimatePresence,motion } from "motion/react";
 const modalVariants = {
     hidden: { opacity: 0,scale:0.2 },
     visible: { 

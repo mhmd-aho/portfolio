@@ -1,16 +1,20 @@
-import { useState} from 'react';
+import { useEffect, useState} from 'react';
 import loginBg from '/src/assets/img/lock-screen.jpg';
 import sun from '/src/assets/img/icons8-sun.svg';
 import map from '/src/assets/img/map.jpg';
 import user from '/src/assets/img/usericon.webp'
 import power from '/src/assets/img/icons8-power-button-50.png';
-import { useEffect } from 'react';
 import { TailChase } from 'ldrs/react';
 import 'ldrs/react/TailChase.css';
 import { AnimatePresence, motion} from "motion/react";
-import { div } from 'motion/react-client';
 export default function Login(props) {
-  const now = new Date();
+  const [now,setNow] = useState(new Date());
+  useEffect(()=>{
+    const timer = setInterval(()=>{
+        setNow(new Date());
+    },60000);
+    return () => clearInterval(timer);
+},[]);
   const hour = now.getHours();
   const min = now.getMinutes();
   const day = now.getDay();
@@ -43,7 +47,6 @@ export default function Login(props) {
       document.removeEventListener('click',handleActivity);
     }
   },[anyMove])
-
     return (
       <motion.section animate={anyMove?{backdropFilter:'blur(200px)',transition:{duration:0.1,delay:0.1}}:{backdropFilter:'blur(0px)',transition:{duration:1}}}   
       style={{backgroundImage:`url(${loginBg})`}} 
