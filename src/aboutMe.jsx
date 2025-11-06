@@ -80,7 +80,7 @@ const motionSvg = (
       </div>
       <div className="h-[744px] w-full flex flex-col  gap-20">
         <div className=" w-full h-10 flex justify-baseline items-center gap-2 border-b border-white/50 ">
-          <img src={star} className="h-6 opacity-50 animate-spin"/>
+          <img alt="star icon" src={star} className="h-6 opacity-50 animate-spin"/>
           <h2 className="text-lg text-white/50 ">About me</h2>
         </div>
         <motion.p variants={container} initial='hidden' whileInView='show' onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="text-2xl w-3/4 leading-relaxed flex flex-col gap-5 text-gray-200">
@@ -91,7 +91,7 @@ const motionSvg = (
       </div>
       <div className="h-[744px] w-full flex flex-col  gap-20">
         <div className=" w-full h-10 flex justify-baseline items-center gap-2 border-b border-white/50 ">
-          <img src={star} className="h-6 opacity-50 animate-spin"/>
+          <img alt="star icon" src={star} className="h-6 opacity-50 animate-spin"/>
           <h2 className="text-lg text-white/50 ">My stack</h2>
         </div>
         <div className="flex flex-col gap-16">

@@ -1,9 +1,7 @@
-import { useEffect, useState,Suspense } from 'react';
+import { useEffect, useState} from 'react';
 import Login from '/src/login.jsx';
 import Home from '/src/home';
 import ShutDown from '/src/shutdown';
-import { TailChase } from 'ldrs/react';
-import 'ldrs/react/TailChase.css';
 function App() {
   const [logedIn,setLogedIn] = useState(false);
   const [powerOff,setPowerOff] = useState(false);
@@ -40,12 +38,8 @@ function App() {
                     logedIn?
                     <Home setPowerOff={setPowerOff} handleShutDown={handleShutDown}/>
                     :
-                    <Suspense fallback={
-                      <div className='w-screen h-screen flex justify-center items-center bg-black text-white'>
-                        <TailChase size="60" speed="1.75" color="white" />
-                      </div>} >
                     <Login setLogedIn={setLogedIn} handleShutDown={handleShutDown}/>
-                    </Suspense>)
+                  )
     );
 }
 

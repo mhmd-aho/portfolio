@@ -22,10 +22,10 @@ export default function DesktopFolder({folder}){
                            { 
                             opendedFolder.length === 0 ? 
                             <p className='text-white/50 self-center'>This folder is empty</p> :
-                           (opendedFolder.map((file,index)=>(
-                                    <div key={index} className="w-fit flex justify-baseline items-baseline hover:bg-gray-400/30">
+                           (opendedFolder.map((file)=>(
+                                    <div key={file.name} className="w-fit flex justify-baseline items-baseline hover:bg-gray-400/30">
                                             <div className="w-72 flex justify-baseline items-center gap-2 px-2">
-                                                <img src={file.icon} className="w-4"/>  
+                                                <img alt={file.icon} src={file.icon} className="w-4"/>  
                                                 <p>{file.name}</p>
                                             </div>
                                             <p className="w-48 px-2">{file.date}</p>

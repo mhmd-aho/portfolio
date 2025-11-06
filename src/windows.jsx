@@ -44,7 +44,7 @@ export default function Windows({windowsOpen,appList,recommedApp,handleOpenApp,h
                                     {
                                         recommedApp.map(app=>(
                                             <div key={app.name}  onClick={()=>handleOpenApp(app)} className='flex items-center justify-baseline gap-2 w-1/2 h-16 p-3 hover:backdrop-blur-2xl hover:bg-blue-300/20'>
-                                                <img src={app.icon} alt="app icon" />
+                                                <img src={app.icon} alt={app.name} />
                                                 <div>
                                                     <p>{app.name}</p>
                                                     <p className='text-gray-300 text-sm'>{app.des}</p>
@@ -62,7 +62,7 @@ export default function Windows({windowsOpen,appList,recommedApp,handleOpenApp,h
                             </div>
                             <p className='text-sm'>Mohamad PC   </p>
                         </div>
-                        <img onClick={handleShutDown} src={power} className='w-7 h-7' alt="power icon" />
+                        <img onClick={handleShutDown} src={power} className='w-7 h-7' alt="power o" />
                         </div>
                         </motion.div>
                     </div>
