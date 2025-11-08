@@ -1,4 +1,4 @@
-import homeBg from '/src/assets/img/home-screen.jpg';
+import homeBg from '/src/assets/img/home-screen.webp';
 import windows from '/src/assets/img/icons8-windows-11-48.png';
 import { useState,useRef,useMemo,useEffect} from 'react';
 import {  motion } from "motion/react";
@@ -79,7 +79,7 @@ export default function Home(props){
             {
                 desktopApps.map(app=>(
                 <button onContextMenu={e=>handleRightClick(e,app.name)} key={app.name} onClick={()=>handleOpenApp(app)}  className='flex flex-col items-center justify-center rounded-sm hover:backdrop-blur-2xl hover:bg-neutral-300/20' >
-                    <img className='w-12' src={app.name === 'Trash'? DeletedApps.length > 0? fullTrash : app.icon :app.icon} alt="app icon" />
+                    <img loading='lazy' className='w-12' src={app.name === 'Trash'? DeletedApps.length > 0? fullTrash : app.icon :app.icon} alt="app icon" />
                     <p className= 'text-white text-[12px]'>{app.name}</p>
                     <Rightclicked setDeletedApps={setDeletedApps} app={app.name} rightclicked={rightclicked} />
                 </button>
@@ -89,14 +89,15 @@ export default function Home(props){
             <Windows appList={appList} recommedApp={recommedApp} handleOpenApp={handleOpenApp} handleShutDown={props.handleShutDown} windowsOpen={windowsOpen} /> 
             <div className='absolute bottom-0 left-0 border-t border-gray-800 backdrop-blur-xl bg-black/80 w-full h-12 flex justify-center items-center gap-2 z-50'>
             <motion.div
+            onClick={()=> setWindowsOpen(prev => !prev)}
             animate={windowsOpen ?
                 {backgroundColor:'#ffffff20',
                 transition:{duration:0.3}} :
                 {backgroundColor:'transparent',
                 transition:{duration:0.3}}}
             whileHover={{backgroundColor:'#ffffff20'}} 
-            className='w-10 p-2 rounded-lg' >
-                <motion.img onClick={()=> setWindowsOpen(prev => !prev)} whileTap={{scale:0.8}} src={windows} alt="windows icon" />
+            className='group w-10 p-2 rounded-lg' >
+                <motion.img className='w-full h-full  group-active:scale-80 transition-all duration-200' loading='lazy' src={windows} alt="windows icon" />
             </motion.div>
                 {
                     taskBarApps.map(app=>(
@@ -112,9 +113,10 @@ export default function Home(props){
                                     {backgroundColor:'transparent',
                                     transition:{duration:0.3}}}
                                 whileHover={{backgroundColor:'#ffffff20'}}
-                                className='relative w-10 p-2 rounded-lg' >
-                                    <motion.img whileTap={{scale:0.8}} src={app.icon} alt="app icon" />
-                                        {openApps.some(openApp => openApp.name === app.name) && <motion.div 
+                                className='group relative w-10 p-2 rounded-lg' >
+                                    <motion.img loading='lazy' className='w-full h-full group-active:scale-80 transition-all duration-300'  src={app.icon} alt="app icon" />
+                                        {openApps.some(openApp => openApp.name === app.name) &&
+                                        <motion.div 
                                         animate={isActive === app.name ? 
                                             {scaleX:2,
                                             backgroundColor:'oklch(70.4% 0.191 10.216)',
@@ -122,15 +124,15 @@ export default function Home(props){
                                             {scaleX:1,
                                             backgroundColor:'#ffffff20',
                                             transition:{duration:0.3}}}
-                                        className='absolute bottom-0  h-1 w-2 rounded left-1/2 -translate-x-1/2 '/>}
+                                        className='absolute bottom-0  h-1 w-2 rounded-[1px] left-1/2 -translate-x-1/2 '/>}
                                 </motion.button>
                     ))
                 }
                 <div className='absolute right-1 h-10 text-sm flex gap-1 '>
                    <button onClick={()=>setSetting(prev=>!prev)} className='flex gap-2 items-center hover:bg-white/20 px-2 rounded-sm'>
-                        <img className='h-5' src={wifi} alt="wifi icon" />
-                        <img className='h-6' src={volume} alt="volume icon" />
-                        <img className='h-5' src={battery} alt="battery icon" />
+                        <img loading='lazy' className='h-5' src={wifi} alt="wifi icon" />
+                        <img loading='lazy' className='h-6' src={volume} alt="volume icon" />
+                        <img loading='lazy' className='h-5' src={battery} alt="battery icon" />
                    </button>
                     <Setting setting={setting} setBrightness={setBrightness} brightness={brightness} setNightMode={setNightMode} nightMode={nightMode} />
                    <div className='flex flex-col hover:bg-white/20 text-white/50 px-2 justify-baseline items-end rounded-sm'>

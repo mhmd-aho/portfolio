@@ -81,10 +81,10 @@ export default function AppWindow({ app, container, handleCloseApp,setShowModal,
             onMouseDown={()=>setIsActive(app.name)}
         >
             <div onPointerDown={handleDrag} className='bg-black h-8 flex justify-between items-center'>
-                <img src={app.name === 'Trash'?DeletedApps.length > 0?fullTrash:app.icon :app.icon} alt='app icon' className='h-full p-1'/>
+                <img loading='lazy'  src={app.name === 'Trash'?DeletedApps.length > 0?fullTrash:app.icon :app.icon} alt='app icon' className='h-full p-1'/>
                 <div className='h-full flex'>
                     <Minimize size={size} handleWindow={handleWindow}/>
-                    <img onClick={()=>handleCloseApp(app.name)} src={exit} alt="exit icon" className='h-full p-1  hover:bg-red-400 cursor-default' />
+                    <img loading='lazy' onClick={()=>handleCloseApp(app.name)} src={exit} alt="exit icon" className='h-full p-1  hover:bg-red-400 cursor-default' />
                 </div>
             </div>
             <div className='flex-1 w-full overflow-auto'>

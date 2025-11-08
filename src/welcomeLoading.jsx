@@ -1,4 +1,4 @@
-import windows from '/src/assets/img/icons8-windows-480.png';
+import windows from '/src/assets/img/icons8-windows-480.webp';
 import { TailChase } from 'ldrs/react';
 import 'ldrs/react/TailChase.css';
 export default function WelcomeLoading(){

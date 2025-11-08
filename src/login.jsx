@@ -1,7 +1,7 @@
 import { useEffect, useState} from 'react';
-import loginBg from '/src/assets/img/lock-screen.jpg';
+import loginBg from '/src/assets/img/lock-screen.webp';
 import sun from '/src/assets/img/icons8-sun.svg';
-import map from '/src/assets/img/map.jpg';
+import map from '/src/assets/img/map.webp';
 import user from '/src/assets/img/usericon.webp'
 import power from '/src/assets/img/icons8-power-button-50.png';
 import { TailChase } from 'ldrs/react';
@@ -57,7 +57,7 @@ export default function Login(props) {
               <motion.div key='login' initial={{opacity:0}} animate={{opacity:1,transition:{delay:0.1}}} exit={{opacity:0}}  className='h-full w-full backdrop-blur-md flex flex-col justify-center items-center p-16 '>
                 <div className='w-1/6 flex flex-col justify-center items-center gap-4 '>
                   <div className='h-44 w-44 bg-white rounded-full p-3'>
-                    <img src={user} alt="user icon" />
+                    <img loading='lazy' src={user} alt="user icon" />
                   </div>
                   <p className='text-xl text-white font-semibold'>Mohamad PC</p>
                   <form onSubmit={handleSubmit} className='w-full h-fit relative flex flex-col justify-center items-center'>
@@ -73,7 +73,7 @@ export default function Login(props) {
                     }
                   </form>
                 </div>
-                <img onClick={props.handleShutDown} src={power} alt="power off" className='absolute bottom-8 right-8 w-8'  />
+                <img loading='lazy' onClick={props.handleShutDown} src={power} alt="power off" className='absolute bottom-8 right-8 w-8'  />
           </motion.div>
           :
           <motion.div exit={{y:'-100vh',transition:{duration:0.1}}} className='h-full w-full flex flex-col justify-between items-center p-24 '>
@@ -86,7 +86,7 @@ export default function Login(props) {
                   <p className='text-white font-semibold'>New York</p>
                   <div className='text-white font-semibold flex justify-between items-center w-full px-1'>
                     <div className='flex justify-baseline items-center'>
-                      <img alt='sun' src={sun} className='w-12' />
+                      <img loading='lazy' alt='sun' src={sun} className='w-12' />
                       <p className='text-5xl flex justify-baseline items-center'>5 <span className='text-sm self-baseline'>c</span></p>
                     </div>
                     <p className='text-sm' >Special <br /> Weather</p>
@@ -117,7 +117,7 @@ export default function Login(props) {
                 <div className='backdrop-blur-xl bg-black/20 w-64 h-32 rounded p-3 flex flex-col justify-between items-baseline'>
                   <p className='text-white font-semibold'>Traffic near you</p>
                   <div className='w-full flex justify-between items-center'>
-                    <img src={map} alt="map" className='w-1/2 h-auto ' />
+                    <img loading='lazy' src={map} alt="map" className='w-1/2 h-auto ' />
                     <div className='text-white text-sm'>
                       <p>New York</p>
                       <p className='text-amber-300'>Moderate traffic</p>

@@ -3,7 +3,7 @@ import { motion} from "motion/react";
 import {contactApp} from '/src/data.js';
 import star from '/src/assets/img/asterisk-svgrepo-com.svg';
 import Cursor from "/src/cursor";
-import noise from '/src/assets/img/noise.png';
+import noise from '/src/assets/img/noise.webp';
 import certfication from '/src/assets/img/Coursera LCMH8N0QIIM1.pdf';
 import { frontEnd,tools } from "/src/data";
 const buttonVariants = {
@@ -80,7 +80,7 @@ const motionSvg = (
       </div>
       <div className="h-[744px] w-full flex flex-col  gap-20">
         <div className=" w-full h-10 flex justify-baseline items-center gap-2 border-b border-white/50 ">
-          <img alt="star icon" src={star} className="h-6 opacity-50 animate-spin"/>
+          <img loading="lazy" alt="star icon" src={star} className="h-6 opacity-50 animate-spin"/>
           <h2 className="text-lg text-white/50 ">About me</h2>
         </div>
         <motion.p variants={container} initial='hidden' whileInView='show' onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="text-2xl w-3/4 leading-relaxed flex flex-col gap-5 text-gray-200">
@@ -91,7 +91,7 @@ const motionSvg = (
       </div>
       <div className="h-[744px] w-full flex flex-col  gap-20">
         <div className=" w-full h-10 flex justify-baseline items-center gap-2 border-b border-white/50 ">
-          <img alt="star icon" src={star} className="h-6 opacity-50 animate-spin"/>
+          <img loading="lazy" alt="star icon" src={star} className="h-6 opacity-50 animate-spin"/>
           <h2 className="text-lg text-white/50 ">My stack</h2>
         </div>
         <div className="flex flex-col gap-16">
@@ -117,6 +117,7 @@ const motionSvg = (
                     <>
                     <div className="h-12 w-12 flex justify-center items-center">
                         <img
+                        loading="lazy"
                         src={tech.src}
                         alt={tech.name}
                         className="h-full w-full object-contain"
@@ -136,6 +137,7 @@ const motionSvg = (
                 <motion.div variants={item} onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} key={tool.name} className="flex items-center gap-3 w-40">
                 <div className="h-12 w-12 flex justify-center items-center">
                     <img
+                    loading="lazy"
                     src={tool.src}
                     alt={tool.name}
                     className="h-full w-full object-contain"
@@ -158,7 +160,7 @@ const motionSvg = (
           {
             contactApp.map((app,index)=>(
               <a onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} key={index} href={app.link} className="h-12 w-12 p-2 bg-primary/10 hover:bg-primary duration-300 rounded-full flex justify-center items-center">
-                <img src={app.icon} alt="icon" className="h-8 w-8" />
+                <img loading="lazy" src={app.icon} alt="icon" className="h-8 w-8" />
               </a>
             ))
           }

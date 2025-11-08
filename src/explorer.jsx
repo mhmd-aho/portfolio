@@ -11,8 +11,8 @@ export default function Explorer(){
     return(
         <section  className="w-full h-full flex-col bg-neutral-900 text-white">
             <div className='flex justify-baseline items-baseline gap-1 px-4'>
-                <button onClick={()=>setFolder(null)}><img className={`w-4  ${folder?'opacity-100':'opacity-50'} rotate-180`} src={arrow}/></button>
-                <button> <img alt='arrow' className='w-4 opacity-50' src={arrow}/></button>
+                <button onClick={()=>setFolder(null)}><img loading='lazy' className={`w-4  ${folder?'opacity-100':'opacity-50'} rotate-180`} src={arrow}/></button>
+                <button> <img loading='lazy' alt='arrow' className='w-4 opacity-50' src={arrow}/></button>
             </div>
             {folder === 'imageArray' && <Pictures/>}
             {(folder === 'desktopApp' || folder === 'downloadApp' || folder === 'documents' ) && <DesktopFolder folder={folder}/>}
@@ -23,28 +23,28 @@ export default function Explorer(){
                     <h2 className="text-2xl font-bold pl-4">Quick access</h2>
                     <div className="w-3/4 self-center flex-1 flex justify-between items-baseline flex-wrap px-10">
                         <button onClick={()=>setFolder('desktopApp')} className="flex justify-center items-center gap-2 w-80 h-20 rounded-lg hover:bg-neutral-700">
-                            <img alt='desktop folder' src={desktopFolder} className=" w-12 h-12"/>
+                            <img loading='lazy' alt='desktop folder' src={desktopFolder} className=" w-12 h-12"/>
                             <div className='text-start'>
                                 <p className="text-sm">Desktop</p> 
                                 <p className="text-gray-400 text-sm">Stored locally</p>
                             </div>
                         </button>
                         <button onClick={()=>setFolder('imageArray')} className="flex justify-center items-center gap-2 w-80 h-20 rounded-lg hover:bg-neutral-700">
-                            <img alt='pictures folder' src={picturesFolder} className="w-12 h-12"/>
+                            <img loading='lazy' alt='pictures folder' src={picturesFolder} className="w-12 h-12"/>
                             <div className='text-start'>
                                 <p className="text-sm">Pictures</p> 
                                 <p className="text-gray-400 text-sm">Stored locally</p>
                             </div>
                         </button>
                         <button onClick={()=>setFolder('documents')} className="flex justify-center items-center gap-2 w-80 h-20 rounded-lg hover:bg-neutral-700">
-                            <img alt='documents folder' src={documentsFolder} className="w-12 h-12"/>
+                            <img loading='lazy' alt='documents folder' src={documentsFolder} className="w-12 h-12"/>
                             <div className='text-start'>
                                 <p className="text-sm">Documents</p> 
                                 <p className="text-gray-400 text-sm">Stored locally</p>
                             </div>
                         </button>
                         <button onClick={()=>setFolder('downloadApp')} className="flex justify-center items-center gap-2 w-80 h-20 rounded-lg hover:bg-neutral-700">
-                            <img alt='downloads folder' src={downloadsFolder} className=" w-12 h-12"/>
+                            <img loading='lazy' alt='downloads folder' src={downloadsFolder} className=" w-12 h-12"/>
                             <div className='text-start'>
                                 <p className="text-sm">Downloads</p> 
                                 <p className="text-gray-400 text-sm">Stored locally</p>

@@ -30,60 +30,60 @@ export default function Setting({setting,setBrightness,brightness,setNightMode,n
                             <div className="h-1/2  backdrop-blur-3xl  bg-neutral-800 flex justify-baseline items-baseline flex-wrap gap-3 p-5">
                               <div className="flex flex-col justify-center items-center gap-2">
                                   <button className="flex border border-white/20 rounded overflow-hidden shadow-2xs">
-                                        <img src={wifi} alt="wifi icon" className="w-12 h-12 border-r border-white/20 p-4 bg-indigo-300 hover:brightness-125"/>
-                                        <img src={arrow} alt="arrow icon" className="w-12 h-12 p-4  bg-indigo-300 hover:brightness-125"/>
+                                        <img loading="lazy" src={wifi} alt="wifi icon" className="w-12 h-12 border-r border-white/20 p-4 bg-indigo-300 hover:brightness-125"/>
+                                        <img loading="lazy" src={arrow} alt="arrow icon" className="w-12 h-12 p-4  bg-indigo-300 hover:brightness-125"/>
                                   </button>
                                   <p className="text-sm font-light">WI-FI</p>
                               </div>
                               <div className="flex flex-col justify-center items-center gap-2">
                                   <button className="flex border border-white/20 rounded overflow-hidden shadow-2xs">
-                                        <img src={blueTooth} alt="wifi icon" className="w-12 h-12 border-r border-white/20 p-4 hover:bg-white/20"/>
-                                        <img src={arrow} alt="arrow icon" className="w-12 h-12 p-4 hover:bg-white/20"/>
+                                        <img loading="lazy" src={blueTooth} alt="wifi icon" className="w-12 h-12 border-r border-white/20 p-4 hover:bg-white/20"/>
+                                        <img loading="lazy" src={arrow} alt="arrow icon" className="w-12 h-12 p-4 hover:bg-white/20"/>
                                   </button>
                                   <p className="text-sm font-light">Bluetooth</p>
                               </div>   
                               <div className="flex flex-col justify-center items-center gap-2">
                                   <button className="w-24 h-12 flex justify-center items-center overflow-hidden border  border-white/20  hover:bg-white/20 rounded shadow-2xs">
-                                        <img src={airPlane} alt="airplane icon" className="w-12 h-12 p-4"/>
+                                        <img loading="lazy" src={airPlane} alt="airplane icon" className="w-12 h-12 p-4"/>
                                   </button>
                                   <p className="text-sm font-light">Airplane mode</p>
                               </div> 
                               <div className="flex flex-col justify-center items-center gap-2" >
                                   <button className="w-24 h-12 flex justify-center items-center overflow-hidden border  border-white/20  hover:bg-white/20 rounded shadow-2xs">
-                                        <img src={energy} alt="power saving icon" className="w-12 h-12 p-4 rotate-90"/>
+                                        <img loading="lazy" src={energy} alt="power saving icon" className="w-12 h-12 p-4 rotate-90"/>
                                   </button>
                                   <p className="text-sm font-light">Energy saver</p>
                               </div>  
                               <div className="flex flex-col justify-center items-center gap-2">
                                   <button className="w-24 h-12 flex justify-center items-center overflow-hidden border  border-white/20  hover:bg-white/20 rounded shadow-2xs">
-                                        <img src={share} alt="share icon" className="w-12 h-12 p-4"/>
+                                        <img loading="lazy" src={share} alt="share icon" className="w-12 h-12 p-4"/>
                                   </button>  
                                   <p className="text-sm font-light">Nearby sharing</p>
                               </div>
                               <div className="flex flex-col justify-center items-center gap-2">
                                   <button onClick={()=>setNightMode(prev=>!prev)} className={`w-24 h-12 flex justify-center items-center border overflow-hidden  border-white/20 ${nightMode?'bg-indigo-300 hover:brightness-125':'bg-transparent hover:bg-white/20'} rounded overflow-hidden shadow-2xs`}>
-                                        <img src={eye} alt="eye icon" className="w-12 h-12 p-4"/>
+                                        <img loading="lazy" src={eye} alt="eye icon" className="w-12 h-12 p-4"/>
                                   </button> 
                                   <p className="text-sm font-light">Night light</p>
                               </div>
                             </div>
                             <div className="h-2/6 flex flex-col justify-baseline gap-2 p-5 bg-neutral-800">
                                  <div className="flex justify-baseline items-center gap-2">
-                                    <label className="h-10 w-10 flex justify-center items-center p-2 rounded hover:bg-white/20" htmlFor="brightness"><img src={sun} alt="brightness icon" /></label>
+                                    <label className="h-10 w-10 flex justify-center items-center p-2 rounded hover:bg-white/20" htmlFor="brightness"><img loading="lazy" src={sun} alt="brightness icon" /></label>
                                     <input type="range" id="brightness" name="brightness" min="0" max="100"  className="w-3/4  accent-indigo-300" onChange={(e)=>setBrightness(e.target.value)} value={brightness}/>
                                  </div>
                                  <div className="flex justify-baseline items-center gap-2">
-                                    <label className="h-10 w-10 flex justify-center items-center pl-3 p-2 rounded hover:bg-white/20" htmlFor="volume"><img src={volume} alt="volume icon" /></label>
+                                    <label className="h-10 w-10 flex justify-center items-center pl-3 p-2 rounded hover:bg-white/20" htmlFor="volume"><img loading="lazy" src={volume} alt="volume icon" /></label>
                                     <input type="range" id="volume" name="volume" min="0" max="100" className="w-3/4  accent-indigo-300"/>
                                  </div>
                             </div>
                             <div className="bg-neutral-900 h-1/6 p-3 flex justify-between items-center">
                                 <div className="w-2/12 h-full hover:bg-white/20 flex justify-center items-center gap-1 rounded">
-                                    <img className="w-5 h-5" src={battery} alt="battery icon" />
+                                    <img loading="lazy" className="w-5 h-5" src={battery} alt="battery icon" />
                                     <p className="text-[12px]">90%</p>
                                 </div>
                                 <div className="w-10 h-full rounded p-3 hover:bg-white/20 flex justify-center items-center">
-                                    <img  src={settings} alt="settings icon"/> 
+                                    <img loading="lazy"  src={settings} alt="settings icon"/> 
                                 </div>
                             </div>
                         </motion.div>

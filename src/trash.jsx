@@ -12,7 +12,7 @@ export default function Trash({trashApps}){
                 trashApps.map((app,index)=>(
                         <div key={index} className="w-fit flex justify-baseline items-baseline hover:bg-gray-400/30">
                             <div className="w-96 flex justify-baseline items-center gap-2 px-2">
-                                <img alt={app.name} src={app.icon} className="w-4"/>  
+                                <img loading="lazy" alt={app.name} src={app.icon} className="w-4"/>  
                                 <p>{app.name}</p>
                             </div>
                             <p className="w-64 px-2">{app.date}</p>

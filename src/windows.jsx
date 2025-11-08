@@ -28,7 +28,7 @@ export default function Windows({windowsOpen,appList,recommedApp,handleOpenApp,h
                             {
                                 appList.map(app=>(
                                 <div key={app.name}  onClick={()=>handleOpenApp(app)} className='flex flex-col items-center justify-center p-3 hover:backdrop-blur-2xl hover:bg-blue-300/20 col-start-1 row-start-5 ' >
-                                    <img className='w-10' src={app.icon} alt="app icon" />
+                                    <img loading='lazy' className='w-10' src={app.icon} alt="app icon" />
                                    <p className= 'text-white text-[10px]'>{app.name}</p>
                                </div>
                                 ))
@@ -44,7 +44,7 @@ export default function Windows({windowsOpen,appList,recommedApp,handleOpenApp,h
                                     {
                                         recommedApp.map(app=>(
                                             <div key={app.name}  onClick={()=>handleOpenApp(app)} className='flex items-center justify-baseline gap-2 w-1/2 h-16 p-3 hover:backdrop-blur-2xl hover:bg-blue-300/20'>
-                                                <img src={app.icon} alt={app.name} />
+                                                <img loading='lazy' src={app.icon} alt={app.name} />
                                                 <div>
                                                     <p>{app.name}</p>
                                                     <p className='text-gray-300 text-sm'>{app.des}</p>
@@ -58,11 +58,11 @@ export default function Windows({windowsOpen,appList,recommedApp,handleOpenApp,h
                         <div className='h-16 w-full bg-black/80 backdrop-blur-3xl  px-14 flex justify-between items-center'>
                         <div className='flex justify-center items-center gap-2'>
                             <div className='w-8 h-8 rounded-full p-1 bg-white'>
-                                <img src={user} alt="user icon" />
+                                <img loading='lazy' src={user} alt="user icon" />
                             </div>
                             <p className='text-sm'>Mohamad PC   </p>
                         </div>
-                        <img onClick={handleShutDown} src={power} className='w-7 h-7' alt="power o" />
+                        <img loading='lazy' onClick={handleShutDown} src={power} className='w-7 h-7' alt="power o" />
                         </div>
                         </motion.div>
                     </div>

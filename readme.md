@@ -1,30 +1,106 @@
-# My Portfolio
+# 🖥️ Windows 11 Inspired Portfolio
 
-Welcome to my personal portfolio! This project showcases my skills, projects, and experiences as a developer. It serves as a central hub for anyone interested in learning more about my work and professional journey.
+A creative and interactive portfolio website designed as a Windows 11 operating system experience. Built with React and Framer Motion, this project showcases modern web development skills through an immersive desktop environment.
 
-## Live Demo
+![Portfolio Preview](./src/assets/img/home-screen.jpg)
 
-Check out the live version of my portfolio here: [https://mhmd-aho.github.io/portfolio/](https://mhmd-aho.github.io/portfolio/)
+## ✨ Features
 
-## Features
+### 🎨 Interactive Desktop Environment
+- **Fully Functional Desktop**: Drag-and-drop windows, minimize/maximize controls
+- **Task Bar**: Quick access to applications with active state indicators
+- **Start Menu**: Windows 11-style start menu with pinned and recommended apps
+- **System Settings**: Brightness control, night mode, and quick settings panel
+- **Lock Screen**: Time, date, and weather widgets with smooth transitions
 
-- **About Me**: A brief introduction about myself, my background, and my passion for technology.
-- **Projects**: A curated list of my notable projects with descriptions, technologies used, and links to live demos or repositories.
-- **Skills**: A section highlighting my technical skills, including programming languages, frameworks, and tools.
-- **Experience**: Details about my professional experience, including past roles and responsibilities.
-- **Contact**: A simple and effective way to get in touch with me.
+### 📂 Applications
+- **About Me**: Detailed introduction with tech stack and contact information
+- **Projects**: Showcase of 8+ projects with live demos and GitHub repositories
+- **File Explorer**: Navigate through desktop folders, documents, downloads, and pictures
+- **Trash**: Recycle bin functionality with file restoration
+- **Right-Click Context Menu**: Desktop interaction features
 
-## Technologies Used
+### 🎭 Animations & Interactions
+- Smooth Framer Motion animations throughout
+- Custom cursor with hover effects
+- Drag-and-drop window management
+- Auto-maximize on edge snap
+- Modal blur effects
+- Staggered content reveals
 
-- **HTML5**: For structuring the content of the portfolio.
-- **CSS3**: For styling and creating a visually appealing design.
-- **JavaScript**: For adding interactivity and dynamic content.
-- **GitHub Pages**: For hosting the portfolio.
+### 📱 Responsive Design
+- Desktop-optimized experience (768px+)
+- Mobile detection with user-friendly message
+- Adaptive layouts and spacing
 
-## Installation
+## 🛠️ Tech Stack
 
-If you'd like to run this project locally, follow these steps:
+### Frontend
+- **React 18** - Component-based UI library
+- **Motion** - Advanced animations and gestures
+- **Tailwind CSS** - Utility-first styling
+- **Vite** - Fast build tool and dev server
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/mhmd-aho/portfolio.git
+### Key Libraries
+- `motion` - Animations and drag interactions
+- `ldrs` - Loading spinners
+- Custom SVG icons and graphics
+
+## 🚀 Getting Started
+
+### Prerequisites
+```bash
+Node.js (v16 or higher)
+npm or yarn
+```
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/mhmd-aho/portfolio.git
+cd portfolio
+```
+
+2. **Install dependencies**
+```bash
+npm install
+```
+
+3. **Run development server**
+```bash
+npm run dev
+```
+
+4. **Open in browser**
+```
+http://localhost:5173
+```
+
+### Build for Production
+```bash
+npm run build
+npm run preview
+```
+## 🎯 Key Features Implementation
+
+### Window Management
+- Drag-and-drop with constraints
+- Edge snap to maximize
+- Z-index management for focus
+- Minimize/restore functionality
+
+### State Management
+- React Hooks (useState, useEffect, useMemo)
+- Efficient re-rendering with memoization
+- Centralized app state
+
+### Animation System
+- Motion variants
+- Staggered children animations
+- Custom easing functions
+- Performance-optimized transitions
+
+## 🌐 Live Demo
+
+**[View Live Portfolio](https://mhmd-aho.github.io/portfolio)**
