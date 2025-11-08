@@ -2,7 +2,7 @@
 
 A creative and interactive portfolio website designed as a Windows 11 operating system experience. Built with React and Framer Motion, this project showcases modern web development skills through an immersive desktop environment.
 
-![Portfolio Preview](./src/assets/img/home-screen.jpg)
+![Portfolio Preview](./src/assets/img/home-screen.webp)
 
 ## ✨ Features
 
