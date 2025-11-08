@@ -2,7 +2,7 @@ import { useState } from "react";
 import { projects } from "/src/data.js";
 import { motion} from "motion/react";
 import Cursor from "/src/cursor";
-import noise from '/src/assets/img/noise.png';
+import noise from '/src/assets/img/noise.webp';
 const projectVariants = {
     hidden: { y: 100, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 0.5 } }
