@@ -13,7 +13,7 @@ import battery from '/src/assets/img/icons8-battery-30.png';
 import volume from '/src/assets/img/icons8-volume-30.png';
 import Setting from '/src/setting.jsx';
 export default function Home(props){
-    const [showModal,setShowModal] = useState(false); 
+    const [showModal,setShowModal] = useState(false);
     const [windowsOpen,setWindowsOpen] = useState(false);
     const [openApps,setOpenApps] = useState([]);
     const [rightclicked,setRightclicked] = useState(false);
@@ -74,7 +74,6 @@ export default function Home(props){
 
     return(
         <section ref={container} className='relative w-screen h-screen bg-cover bg-center overflow-hidden' style={{backgroundImage:`url(${homeBg})`,filter:`brightness(${brightness}%) ${nightMode?'saturate(0.5)':''}`}}>
-            <Modal showModal={showModal} />
             <div className='w-1/6 h-3/4 grid grid-cols-2 grid-rows-6 gap-y-3.5 p-2 pr-22'>
             {
                 desktopApps.map(app=>(
@@ -148,14 +147,15 @@ export default function Home(props){
                         app={app}
                         container={container}
                         handleCloseApp={handleCloseApp}
-                        setShowModal={setShowModal}
                         trashApps={trashApps}
                         isActive={isActive}
                         setIsActive={setIsActive}
                         DeletedApps={DeletedApps}
+                        setShowModal={setShowModal}
                         />
     ))
 }
+        <Modal showModal={showModal} />
         </section>
     )
 }

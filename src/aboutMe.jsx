@@ -175,7 +175,7 @@ const motionSvg = (
             animate="visible"
             initial="invisible"
             className="border border-primary px-4 py-2 text-white rounded-lg"
-            href="https://www.upwork.com/freelancers/~01f0706a5c1606eca6?mp_source=share"
+            href="https://www.upwork.com/freelancers/mohamadah?mp_source=share"
           >
             Hire me
           </motion.a>

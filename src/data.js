@@ -18,12 +18,7 @@ import settings from '/src/assets/img/72008_settings_icon.png';
 import trash from '/src/assets/img/icons8-bin-windows-48.png';
 import explorer from '/src/assets/img/icons8-File-explorer-48.png';
 import chrome from '/src/assets/img/icons8-chrome-48.png';
-import project1 from '/src/assets/img/randomMessages.webp';
-import project2 from '/src/assets/img/salaryCal.webp';
-import project3 from '/src/assets/img/randomMovie.webp';
-import project4 from '/src/assets/img/taskManager.webp';
 import project5 from '/src/assets/img/healthDashboard.webp';
-import project6 from '/src/assets/img/walletTrack.webp';
 import project7 from '/src/assets/img/ticketGenerator.webp';
 import project8 from '/src/assets/img/eCommerce.webp';
 import settingIcon from '/src/assets/img/72008_settings_icon.png';
@@ -38,6 +33,8 @@ import bootstrap from '/src/assets/img/icons8-bootstrap-48.png';
 import reactP from '/src/assets/img/icons8-react-48.png';
 import vsCode from '/src/assets/img/icons8-vs-code-50.png';
 import typeScript from '/src/assets/img/icons8-typescript-48.png';
+import project9 from '/src/assets/img/multi-step-form.png';
+import project10 from '/src/assets/img/preview.png';
 const appList = [
         {
             name:'Trash',
@@ -208,57 +205,17 @@ const appList = [
     const documents = appList.filter(app=> app.type ==='File');
         const projects = [
         {
-            name: "RANDOM MESSAGE",
-            src: project1,
-            tools:'Html5 | Css3 | Javascript',
-            link:'https://mhmd-aho.github.io/mixed-message/',
-            repo:'https://github.com/mhmd-aho/mixed-message',
-            des:'A fun project that generates a new random message every time the user interacts. It’s designed to be lighthearted and engaging, making each visit feel fresh and unexpected.'
-        },
-        {
-            name: "SALARY CALCULATOR",
-            src: project2,
-            tools: 'Html5 | Css3 | Javascript',
-            link:'https://mhmd-aho.github.io/salary-cal/',
-            repo:'https://github.com/mhmd-aho/salary-cal',
-            des:'A straightforward calculator that allows users to quickly estimate their salary after deductions or additions. It provides a simple way to get accurate results without any complexity.'
-        },
-        {
-            name: "RANDOM MOVIE",
-            src: project3,
-            tools:'Html5 | TailwindCss | React.js',
-            link:'https://mhmd-aho.github.io/randomMovie/',
-            repo:'https://github.com/mhmd-aho/randomMovie',
-            des:'An app that suggests random movies for users who can’t decide what to watch. It delivers quick recommendations in an easy-to-use format, helping users discover new films effortlessly.'
-        },
-        {
-            name: "Task Manager",
-            src: project4,
-            tools: 'Html5 | TailwindCss | React.js',
-            link:'https://mhmd-aho.github.io/task-manager/',
-            repo:'https://github.com/mhmd-aho/task-manager',
-            des:'A productivity-focused app where users can create, organize, and manage tasks. It’s designed to keep track of daily to-dos in a clear and structured way, helping users stay on top of their schedules.'
-        },
-        {
             name: "health Dashboard",
             src: project5,
-            tools: 'Html5 | TailwindCss | React.js',
+            tools: 'TailwindCss| JavaScript | React.js',
             link:'https://mhmd-aho.github.io/healthDashboard/',
             repo:'https://github.com/mhmd-aho/healthDashboard',
             des:'A personal health tracker that brings together multiple aspects of well-being, including mood, sleep, hydration, and exercise. It gives users an overview of their daily habits and progress in one place.'
         },
         {
-            name: "Wallet Track",
-            src: project6,
-            tools: 'Html5 | TailwindCss | React.js',
-            link:'https://mhmd-aho.github.io/wallet-track/',
-            repo:'https://github.com/mhmd-aho/wallet-track',
-            des:'A finance-tracking app that helps users monitor their income and expenses. It provides an easy way to manage budgets and visualize spending patterns for better money management.'
-        },
-        {
             name:'Ticket generator (frontend mentor project)',
             src: project7,
-            tools: 'Html5 | TailwindCss | React.js',
+            tools: 'TailwindCss| JavaScript | React.js',
             link:'https://mhmd-aho.github.io/ticket-generator/',
             repo:'https://github.com/mhmd-aho/ticket-generator',
             des:'A small project that generates scrolling ticker text based on user input. It’s an interactive way to create live-updating ticker displays, often seen in news or stock websites.'
@@ -266,9 +223,25 @@ const appList = [
         {
             name:'e-commerce (frontend mentor project)',
             src: project8,
-            tools: 'Html5 | TailwindCss | React.js',
+            tools: 'TailwindCss| JavaScript | React.js',
             link:'https://mhmd-aho.github.io/e-commerce/',
             repo:'https://github.com/mhmd-aho/e-commerce',
+            des:'A product page simulation for an e-commerce site. It allows users to browse items, adjust quantities, and add products to a cart, providing a realistic shopping experience.'
+        },
+        {
+            name:'Multi-step form solution (frontend mentor project)',
+            src: project9,
+            tools: 'TailwindCss | JavaScript |React.js',
+            link:'https://mhmd-aho.github.io/multi-step-form/',
+            repo:'https://github.com/mhmd-aho/multi-step-form',
+            des:'A multi-step form solution that guides users through a series of questions and choices, collecting information in a structured way. It’s designed to be user-friendly and efficient, making it easy for users to complete forms without getting lost or frustrated.'
+        },
+        {
+            name:'Nike e-commerce',
+            src: project10,
+            tools:'TailwindCss| TypeScript | React.js',
+            link:'https://mhmd-aho.github.io/nike-e-commerce/',
+            repo:'https://github.com/mhmd-aho/nike-e-commerce',
             des:'A product page simulation for an e-commerce site. It allows users to browse items, adjust quantities, and add products to a cart, providing a realistic shopping experience.'
         }
     ];

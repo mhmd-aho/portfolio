@@ -1,4 +1,5 @@
 import { AnimatePresence,motion } from "motion/react";
+
 const modalVariants = {
     hidden: { opacity: 0,scale:0.2 },
     visible: { 
@@ -17,10 +18,9 @@ export default function Modal({showModal}) {
                         initial="hidden"
                         animate="visible"
                         exit="hidden"
-                        className="w-screen h-screen bg-white/30 backdrop-blur-2xl fixed top-0 left-0"
+                        className="w-screen h-screen bg-white/30 backdrop-blur-2xl fixed inset-0 z-[25]"
                         />
             }
-
         </AnimatePresence>
     )
 }

@@ -15,8 +15,7 @@ function Loading() {
         </div>
     );
 }
-export default function AppWindow({ app, container, handleCloseApp,setShowModal,trashApps,isActive,setIsActive,DeletedApps  }) {
-
+export default function AppWindow({ app, container, handleCloseApp,trashApps,setShowModal,isActive,setIsActive,DeletedApps  }) {
     const [size,setSize] = useState(() => {
         if(app.name === 'About me' || app.name === 'Projects'){
         return 'w-screen h-screen';}
@@ -75,7 +74,7 @@ export default function AppWindow({ app, container, handleCloseApp,setShowModal,
             dragControls={dragControl}
             dragMomentum={false}
             dragConstraints={container} 
-            className={`draggable absolute top-0 left-0 flex flex-col ${size} ${isActiveApp?'z-30':'z-20'} border border-white/20` } 
+            className={`draggable absolute top-0 left-0 flex flex-col ${size} ${isActiveApp?'z-30':'z-20'} border border-white/20 shadow-2xl shadow-black/20` } 
             dragElastic={1}
             animate={{x:position.x, y:position.y,transition:{type:"tween",duration:0.2}}}
             onMouseDown={()=>setIsActive(app.name)}

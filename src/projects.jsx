@@ -25,7 +25,7 @@ export default function Projects({size}){
                 {
                     projects.map((project , index)=>{
                         return(
-                            <motion.div  key={project.name} whileHover={{scale:1.1}} onMouseEnter={()=>setIsHovered(index)} onMouseLeave={()=>setIsHovered(null)} className="h-fit flex odd:self-start even:self-end odd:flex-row even:flex-row-reverse items-start gap-1 overflow-hidden font-normal">
+                            <motion.div  key={project.name} whileHover={{scale:1.1}} onMouseEnter={()=>setIsHovered(index)} onMouseLeave={()=>setIsHovered(null)} className="h-fit flex odd:self-start even:self-end odd:flex-row even:flex-row-reverse items-start gap-1 overflow-hidden font-normal mb-12">
                                         <motion.div  initial='hidden' variants={projectVariants} whileInView='visible' viewport={{once:true,amount:0.2}} className="w-fit flex flex-col items-start gap-1">
                                             <img onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="h-56" src={project.src} alt="project image" />
                                             <div className={`flex flex-col  ${index % 2 === 0?'items-start self-start':'items-end self-end'} gap-0.5`}>
