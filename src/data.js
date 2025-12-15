@@ -35,6 +35,7 @@ import vsCode from '/src/assets/img/icons8-vs-code-50.png';
 import typeScript from '/src/assets/img/icons8-typescript-48.png';
 import project9 from '/src/assets/img/multi-step-form.png';
 import project10 from '/src/assets/img/preview.png';
+import upwork from '/src/assets/img/upwork-icon.webp';
 const appList = [
         {
             name:'Trash',
@@ -113,7 +114,7 @@ const appList = [
             icon: linkedin,
             place:'recommed',
             des:'Recently added',
-            link:'www.linkedin.com/in/mhmd-abou-hamoud',
+            link:'https://www.linkedin.com/in/mohamad-abou-hamoud',
             contact: true,
             type:'Shortcut',
             size:'3kb',
@@ -158,6 +159,15 @@ const appList = [
             type:'Shortcut',
             size:'4kb',
             date:'30/9/2025',
+        },
+        {
+            name:'Upwork',
+            icon:upwork,
+            contact: true,
+            type:'Shortcut',
+            size:'4kb',
+            date:'30/9/2025',
+            link:'https://www.upwork.com/freelancers/mohamadah?mp_source=share'
         },
         {
             name:'Vs code',
@@ -240,7 +250,7 @@ const appList = [
             name:'Nike e-commerce',
             src: project10,
             tools:'TailwindCss| TypeScript | React.js',
-            link:'https://mhmd-aho.github.io/nike-e-commerce/',
+            link:'https://nike-e-commerce-flax.vercel.app/',
             repo:'https://github.com/mhmd-aho/nike-e-commerce',
             des:'A product page simulation for an e-commerce site. It allows users to browse items, adjust quantities, and add products to a cart, providing a realistic shopping experience.'
         }

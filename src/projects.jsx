@@ -41,12 +41,12 @@ export default function Projects({size}){
                                                         onMouseLeave={()=>setHover(false)} 
                                                         variants={buttonVariants} whileHover='hover' 
                                                         whileTap='tap' animate='visible' initial='invisible' 
-                                                        href={project.repo} className="border border-primary px-2 py-1 text-sm text-white rounded-lg">Repository</motion.a>
+                                                        href={project.repo} target="_blank" rel="noopener noreferrer" className="border border-primary px-2 py-1 text-sm text-white rounded-lg">Repository</motion.a>
                                                         <motion.a 
                                                         onMouseEnter={()=>setHover(true)} 
                                                         onMouseLeave={()=>setHover(false)} 
                                                         variants={buttonVariants} whileHover='hover' 
-                                                        whileTap='tap' animate='visible' initial='invisible' href={project.link} className="border border-primary px-2 py-1 text-sm text-white rounded-lg">Live demo</motion.a>
+                                                        whileTap='tap' animate='visible' initial='invisible' href={project.link} target="_blank" rel="noopener noreferrer" className="border border-primary px-2 py-1 text-sm text-white rounded-lg">Live demo</motion.a>
                                                     </motion.div>
                                         </motion.div>
                                     </motion.div>

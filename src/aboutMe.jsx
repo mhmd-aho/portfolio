@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState,useRef} from "react";
 import { motion} from "motion/react";
 import {contactApp} from '/src/data.js';
 import star from '/src/assets/img/asterisk-svgrepo-com.svg';
@@ -6,6 +6,7 @@ import Cursor from "/src/cursor";
 import noise from '/src/assets/img/noise.webp';
 import certfication from '/src/assets/img/Coursera LCMH8N0QIIM1.pdf';
 import { frontEnd,tools } from "/src/data";
+import emailjs from '@emailjs/browser';
 const buttonVariants = {
   invisible: { scale: 0 },
   visible: { scale: 1, transition: { duration: 0.6,delay:1,ease:'easeIn' } },
@@ -35,6 +36,28 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 function AboutMe({size}) {
+  const formRef = useRef(null);
+  const [loading, setLoading] = useState(false);
+  const sendEmail = (e) => {
+      e.preventDefault();
+      setLoading(true);
+      emailjs
+        .sendForm(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          formRef.current,
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        )
+        .then(() => {
+          alert("Message sent successfully");
+          formRef.current.reset();
+        })
+        .catch((error) => {
+          console.error("Failed to send message", error);
+          alert("Failed to send message");
+        })
+        .finally(() => setLoading(false));
+    };
 const gsapSvg = (<svg xmlns="http://www.w3.org/2000/svg" width="160px" fill="black" viewBox="0 0 82 30">
                     <path fill="#0ae448" d="M23.81 14.013v.013l-1.075 4.665c-.058.264-.322.458-.626.458H20.81a.218.218 0 0 0-.208.155c-1.198 4.064-2.82 6.858-4.962 8.535-1.822 1.428-4.068 2.093-7.069 2.093-2.696 0-4.514-.867-6.056-2.578C.478 25.09-.364 21.388.146 16.926 1.065 8.549 5.41.096 13.776.096c2.545-.023 4.543.762 5.933 2.33 1.47 1.657 2.216 4.154 2.22 7.421a.55.55 0 0 1-.549.536h-6.13a.42.42 0 0 1-.407-.41c-.05-2.259-.72-3.36-2.052-3.36-2.35 0-3.736 3.19-4.471 4.959-1.027 2.47-1.55 5.152-1.447 7.824.049 1.244.249 2.994 1.43 3.718 1.047.643 2.541.217 3.446-.495.904-.711 1.632-1.942 1.938-3.065.043-.156.046-.277.005-.332-.043-.055-.162-.068-.253-.068h-1.574a.572.572 0 0 1-.438-.202.42.42 0 0 1-.087-.362l1.076-4.674c.053-.24.27-.42.537-.453v-.011h10.33c.024 0 .049 0 .072.005.268.034.457.284.452.556h.002Z"/>
                     <path fill="#0ae448" d="M41.594 8.65a.548.548 0 0 1-.548.531H35.4c-.37 0-.679-.3-.679-.665 0-1.648-.57-2.45-1.736-2.45s-1.918.717-1.94 1.968c-.025 1.395.764 2.662 3.01 4.84 2.957 2.774 4.142 5.232 4.085 8.48C38.047 26.605 34.476 30 29.042 30c-2.775 0-4.895-.743-6.305-2.207-1.431-1.486-2.087-3.668-1.95-6.485a.548.548 0 0 1 .549-.53h5.84a.55.55 0 0 1 .422.209.48.48 0 0 1 .106.384c-.065 1.016.112 1.775.512 2.195.256.272.613.41 1.058.41 1.079 0 1.711-.763 1.735-2.09.02-1.148-.343-2.155-2.321-4.19-2.555-2.496-4.846-5.075-4.775-9.13.042-2.351.976-4.502 2.631-6.056C28.294.868 30.687 0 33.465 0c2.783.02 4.892.813 6.269 2.359 1.304 1.466 1.932 3.582 1.862 6.29h-.002Z"/>
@@ -150,50 +173,112 @@ const motionSvg = (
         </div>
         </div>
       </div>
-      <motion.div variants={container} initial='hidden' whileInView="show" className="h-96 w-full flex flex-col justify-center items-center text-center gap-8">
-        <motion.h2 variants={item} onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="text-4xl font-semibold">Let’s Build Something Great Together</motion.h2>
-        <motion.p variants={item} onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="text-lg text-white/50 w-xl">
-          I’m always open to discussing new projects, creative ideas, or opportunities to bring your vision to life.
-        </motion.p>
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="min-h-[750px] w-full flex flex-col justify-center items-center text-center gap-10 px-4"
+    >
+      <motion.h2 variants={item} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className="text-4xl sm:text-5xl font-semibold tracking-tight"> 
+        Let’s Build Something Great Together
+      </motion.h2>
+      <motion.p variants={item} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className="text-base sm:text-lg text-white/60 max-w-2xl">
+        I’m always open to discussing new projects, creative ideas, or opportunities
+        to bring your vision to life.
+      </motion.p>
+      <motion.form variants={item} ref={formRef} onSubmit={sendEmail} className="w-full max-w-xl flex flex-col gap-4 p-6 sm:p-8 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md shadow-lg">
+        <div className="flex gap-3">
+          <input
+            name="name"
+            id="name"
+            type="text"
+            placeholder="Your name"
+            required
+            className="w-full rounded-lg px-4 py-3
+                      bg-white/10 border border-white/20
+                      text-white placeholder:text-white/50
+                      focus:outline-none focus:border-primary
+                      focus:ring-1 focus:ring-primary"
+          />
 
-        <motion.div variants={item} className="flex justify-center items-center gap-6">
-          {
-            contactApp.map((app,index)=>(
-              <a onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} key={index} href={app.link} className="h-12 w-12 p-2 bg-primary/10 hover:bg-primary duration-300 rounded-full flex justify-center items-center">
-                <img loading="lazy" src={app.icon} alt="icon" className="h-8 w-8" />
-              </a>
-            ))
-          }
-        </motion.div>
-        <motion.div variants={item} className="flex gap-5 justify-center pt-4">
-          <motion.a
-            onMouseEnter={()=>setHover(true)} 
-            onMouseLeave={()=>setHover(false)}
-            variants={buttonVariants}
-            whileHover="hover"
-            whileTap="tap"
-            animate="visible"
-            initial="invisible"
-            className="border border-primary px-4 py-2 text-white rounded-lg"
-            href="https://www.upwork.com/freelancers/mohamadah?mp_source=share"
+          <input
+            name="email"
+            id="email"
+            type="email"
+            placeholder="Email address"
+            required
+            className="w-full rounded-lg px-4 py-3
+                      bg-white/10 border border-white/20
+                      text-white placeholder:text-white/50
+                      focus:outline-none focus:border-primary
+                      focus:ring-1 focus:ring-primary"
+          />
+        </div>
+
+        <textarea
+          rows={5}
+          name="message"
+          id="message"
+          placeholder="Tell me about your project..."
+          required
+          className="w-full rounded-lg px-4 py-3
+                    bg-white/10 border border-white/20
+                    text-white placeholder:text-white/50
+                    focus:outline-none focus:border-primary
+                    focus:ring-1 focus:ring-primary resize-none"
+        />
+
+        <button
+          disabled={loading}
+          type="submit"
+          className="mt-2 w-full py-3 rounded-lg font-medium
+                    bg-primary text-black
+                    hover:brightness-110 active:scale-[0.98]
+                    transition disabled:opacity-60"
+        >
+          {loading ? "Sending..." : "Send Message"}
+        </button>
+      </motion.form>
+
+      {/* Divider */}
+      <div className="w-full max-w-xl flex items-center gap-4">
+        <div className="flex-1 h-px bg-white/20" />
+        <p className="text-sm text-white/60 whitespace-nowrap">
+          Or reach me directly
+        </p>
+        <div className="flex-1 h-px bg-white/20" />
+      </div>
+
+      {/* Social Icons */}
+      <motion.div
+        variants={item}
+        className="flex justify-center items-center gap-4"
+      >
+        {contactApp.map((app, index) => (
+          <a
+            key={index}
+            href={app.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            className="h-12 w-12 rounded-full
+                      bg-white/10 border border-white/20
+                      flex items-center justify-center
+                      hover:bg-primary hover:border-primary
+                      transition-all hover:-translate-y-1"
           >
-            Hire me
-          </motion.a>
-          <motion.a
-            onMouseEnter={()=>setHover(true)} 
-            onMouseLeave={()=>setHover(false)}
-            variants={buttonVariants}
-            whileHover="hover"
-            whileTap="tap"
-            animate="visible"
-            initial="invisible"
-            className="border border-primary px-4 py-2 text-white rounded-lg"
-            href="mailto:mohamadabouhamoudb@gmail.com"
-          >
-            Email me
-          </motion.a>
-        </motion.div>
+            <img
+              src={app.icon}
+              alt=""
+              className="h-6 w-6"
+              loading="lazy"
+            />
+          </a>
+        ))}
       </motion.div>
+    </motion.div>
     </section>
   );
 }
