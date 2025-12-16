@@ -34,8 +34,10 @@ import reactP from '/src/assets/img/icons8-react-48.png';
 import vsCode from '/src/assets/img/icons8-vs-code-50.png';
 import typeScript from '/src/assets/img/icons8-typescript-48.png';
 import project9 from '/src/assets/img/multi-step-form.png';
-import project10 from '/src/assets/img/preview.png';
+import project10 from '/src/assets/img/preview.webp';
 import upwork from '/src/assets/img/upwork-icon.webp';
+import gsap from '/src/assets/img/gsap.webp';
+import motion from '/src/assets/img/motion.webp';
 const appList = [
         {
             name:'Trash',
@@ -322,11 +324,12 @@ const appList = [
         },
         {
             name:'GSAP',
-            svg: true
+            src: gsap
 
         },
         {
             name:'Motion',
-            svg:true}
+            src: motion
+        },
     ]
     export {appList,desktopApp,taskBarApp,recommedApp,contactApp,projects,imageArray,downloadApp,documents,desktopFolder,tools,frontEnd};
